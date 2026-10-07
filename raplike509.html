@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RAPLIKE 509</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07070c;--card:#12121c;--line:#24243a;--text:#f2f2f7;--mute:#9a9ab3;--blue:#1f5cff;--red:#e8262f;--grad:linear-gradient(90deg,var(--blue),var(--red));box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Barlow Semi Condensed",system-ui,sans-serif;font-size:17px;min-height:100vh;background-image:radial-gradient(60% 40% at 90% 100%,#e8262f33,transparent),radial-gradient(60% 40% at 0% 0%,#1f5cff33,transparent);background-attachment:fixed}
+.screen{display:none;max-width:480px;margin:0 auto;padding:28px 20px 120px}
+.screen.on{display:block}
+h1{font-size:44px;font-weight:800;letter-spacing:-.5px;margin:0 0 6px;line-height:1}
+h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+p.sub{color:var(--mute);margin:0 0 28px}
+button,input{font:inherit;color:inherit}
+.btn{display:block;width:100%;padding:14px;border:0;border-radius:12px;background:var(--grad);font-weight:700;cursor:pointer;margin-top:12px}
+.btn.alt{background:var(--card);border:1px solid var(--line)}
+.lang{display:flex;flex-direction:column;gap:10px;margin-top:40px}
+.lang button{padding:16px;border-radius:12px;border:1px solid var(--line);background:var(--card);text-align:left;cursor:pointer;font-weight:500}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--card);margin-top:12px}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.top h2{margin:0;font-size:28px;font-weight:800}
+.top button{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--mute)}
+.post{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.post .art{height:150px;display:flex;align-items:flex-end;padding:12px;font-weight:800;font-size:26px}
+.post .row{display:flex;justify-content:space-between;align-items:center;padding:12px 14px}
+.post small{color:var(--mute);display:block}
+.play{width:44px;height:44px;border-radius:50%;border:0;background:var(--grad);cursor:pointer;font-size:16px}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#0d0d16ee;border-top:1px solid var(--line);display:none}
+#bar.on{display:block}
+#bar .in{max-width:480px;margin:auto;display:flex;align-items:center;gap:12px}
+#bar .t{flex:1;min-width:0}
+#bar .t span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog{height:4px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--grad)}
+</style>
+</head>
+<body>
+<section class="screen on" id="s-lang">
+  <h1>RAP<b>LIKE</b> 509</h1>
+  <p class="sub">La musique haïtienne, le rap haïtien.</p>
+  <div class="lang">
+    <button data-l="en">English</button>
+    <button data-l="fr">Français</button>
+    <button data-l="ht">Kreyòl</button>
+    <button data-l="es">Español</button>
+  </div>
+</section>
+
+<section class="screen" id="s-login">
+  <h1 id="t-welcome"></h1>
+  <p class="sub" id="t-sub"></p>
+  <input id="email" type="email" autocomplete="email">
+  <input id="pass" type="password" autocomplete="current-password">
+  <button class="btn" id="go"></button>
+  <button class="btn alt" id="signup"></button>
+</section>
+
+<section class="screen" id="s-feed">
+  <div class="top"><h2 id="t-feed"></h2><button id="back"></button></div>
+  <div id="posts"></div>
+</section>
+
+<div id="bar"><div class="in">
+  <button class="play" id="bplay" aria-label="Play/Pause">❚❚</button>
+  <div class="t"><span id="bt"></span><div class="prog"><i id="bp"></i></div></div>
+</div></div>
+
+<script>
+var T={
+ en:{w:"Welcome back!",s:"Log in to your account",e:"Email",p:"Password",g:"Log in",u:"Sign up",f:"Latest tracks",b:"Language"},
+ fr:{w:"Content de te revoir !",s:"Connecte-toi à ton compte",e:"E-mail",p:"Mot de passe",g:"Se connecter",u:"Créer un compte",f:"Derniers titres",b:"Langue"},
+ ht:{w:"Byenvini ankò !",s:"Konekte sou kont ou",e:"Imèl",p:"Modpas",g:"Konekte",u:"Kreye yon kont",f:"Dènye mizik yo",b:"Lang"},
+ es:{w:"¡Bienvenido de nuevo!",s:"Inicia sesión en tu cuenta",e:"Correo",p:"Contraseña",g:"Iniciar sesión",u:"Crear cuenta",f:"Últimos temas",b:"Idioma"}
+};
+var tracks=[
+ {a:"Artiste exemple 1",t:"Titre exemple A",c:"#1f5cff,#07070c"},
+ {a:"Artiste exemple 2",t:"Titre exemple B",c:"#e8262f,#07070c"},
+ {a:"Artiste exemple 3",t:"Titre exemple C",c:"#1f5cff,#e8262f"}
+];
+var L="fr",cur=-1,playing=false,pct=0,timer=null;
+function $(i){return document.getElementById(i)}
+function show(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("on")});$(id).classList.add("on");$("bar").classList.toggle("on",id==="s-feed"&&cur>=0)}
+function apply(){var x=T[L];document.documentElement.lang=L==="ht"?"ht":L;
+ $("t-welcome").textContent=x.w;$("t-sub").textContent=x.s;$("email").placeholder=x.e;$("pass").placeholder=x.p;
+ $("go").textContent=x.g;$("signup").textContent=x.u;$("t-feed").textContent=x.f;$("back").textContent=x.b}
+function render(){$("posts").innerHTML=tracks.map(function(k,i){
+ return '<article class="post"><div class="art" style="background:linear-gradient(135deg,'+k.c+')">'+k.t+'</div>'+
+ '<div class="row"><div><strong>'+k.a+'</strong><small>'+k.t+'</small></div><button class="play" data-i="'+i+'" aria-label="Play">▶</button></div></article>'}).join("")}
+function tick(){clearInterval(timer);if(!playing)return;timer=setInterval(function(){pct=(pct+0.5)%100;$("bp").style.width=pct+"%"},200)}
+function sync(){$("bplay").textContent=playing?"❚❚":"▶"}
+document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){L=b.dataset.l;apply();show("s-login")}});
+$("go").onclick=function(){show("s-feed")};
+$("signup").onclick=function(){show("s-feed")};
+$("back").onclick=function(){show("s-lang")};
+$("posts").onclick=function(e){var b=e.target.closest("[data-i]");if(!b)return;var i=+b.dataset.i;
+ if(i===cur){playing=!playing}else{cur=i;playing=true;pct=0;$("bt").textContent=tracks[i].a+" — "+tracks[i].t}
+ $("bar").classList.add("on");sync();tick()};
+$("bplay").onclick=function(){playing=!playing;sync();tick()};
+apply();render();
+</script>
+</body>
+</html>
