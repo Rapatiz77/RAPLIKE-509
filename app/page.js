@@ -114,7 +114,7 @@ export default function Home() {
 
   async function loadTracks() {
     const { data } = await supabase.from("tracks")
-      .select("id,title,audio_url,cover_url,artist_id,profiles(username,avatar_url)")
+      .select("id,title,audio_url,cover_url,artist_id,profiles!artist_id(username,avatar_url)")
       .order("created_at", { ascending: false });
     setTracks(data || []);
   }
@@ -124,7 +124,8 @@ export default function Home() {
   }
   async function loadComments() {
     const { data } = await supabase.from("comments")
-      .select("id,track_id,body,profiles(username)").order("created_at", { ascending: true });
+      .select("id,track_id,body,profiles!user_id(username)")
+      .order("created_at", { ascending: true });
     setComments(data || []);
   }
   async function loadStations() {
@@ -181,7 +182,7 @@ export default function Home() {
       const cover_url = coverFile ? await uploadImage(coverFile) : null;
       const ins = await supabase.from("tracks").insert({ artist_id: user.id, title, audio_url, cover_url });
       if (ins.error) throw ins.error;
-      setMsg(t.ok); setTitle(""); setFile(null); setCoverFile(null); loadTracks(); setTab("home");
+      setMsg(t.ok); setTitle(""); setFile(null); setCoverFile(null); await loadTracks(); setTab("home");
     } catch (e) { setMsg(e.message); }
     setBusy(false);
   }
