@@ -541,7 +541,9 @@ export default function Home() {
           <div className="stn" key={s.id}>
             <div className="liveb"><i />{t.live}</div>
             <strong>{s.name}</strong>
-            <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe src={s.stream_url.slice(7)} allow="autoplay" style={{ width: "100%", height: 170, border: 0, marginTop: 10 }} />
+              : <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />}
           </div>
         ))}
       </>)}
@@ -553,9 +555,11 @@ export default function Home() {
           <div className="stn" key={s.id}>
             <div className="liveb"><i />{t.live}</div>
             <strong>{s.name}</strong>
-            {s.stream_url.includes("embed")
-              ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
-              : <video className="vid" controls playsInline src={s.stream_url} />}
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe className="vid" src={s.stream_url.slice(7)} allow="autoplay; fullscreen" allowFullScreen />
+              : s.stream_url.includes("embed")
+                ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
+                : <video className="vid" controls playsInline src={s.stream_url} />}
           </div>
         ))}
       </>)}
