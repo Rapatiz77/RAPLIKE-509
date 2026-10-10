@@ -67,6 +67,7 @@ button{font-family:inherit;cursor:pointer}
 .nav-top{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #e1112955;gap:12px}
 .logo{font-style:italic;font-weight:900;font-size:26px;letter-spacing:-1px;cursor:pointer;white-space:nowrap;margin:0}
 .logo span{color:#ef2b3a}
+.logoimg{height:48px;width:auto;display:block;cursor:pointer}
 .links{display:none}
 .right{display:flex;gap:8px;align-items:center}
 .pubb{display:none}
@@ -75,6 +76,7 @@ button{font-family:inherit;cursor:pointer}
 .crown{font-size:34px}
 .big{font-size:52px;font-weight:900;font-style:italic;letter-spacing:-2px;line-height:1;text-shadow:0 4px 24px #000}
 .big span{color:#ef2b3a}
+.heroimg{width:100%;max-width:520px;height:auto}
 .tagl{font-style:italic;font-size:18px;margin:12px 0 8px;max-width:520px}
 .slog{letter-spacing:4px;font-size:11px;color:#b9b9cc}
 .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
@@ -170,6 +172,7 @@ audio{width:100%}
   .mini{bottom:16px}
   .hero{min-height:340px}
   .big{font-size:96px}
+  .heroimg{max-width:760px}
   .tagl{font-size:24px}
   .quick{grid-template-columns:repeat(4,1fr)}
   .cols{grid-template-columns:2fr 1fr}
@@ -406,7 +409,7 @@ export default function Home() {
         onEnded={() => step(1)} />
 
       <header className="nav-top">
-        <h1 className="logo" onClick={() => go("home")}>RAPLIKE <span>509</span></h1>
+        <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="logoimg" onClick={() => go("home")} />
         <nav className="links">
           {links.map(([k, n, ic]) => <button key={k} className={tab === k ? "on" : ""} onClick={() => go(k)}><Icon n={ic} s={18} />{n}</button>)}
         </nav>
@@ -430,8 +433,7 @@ export default function Home() {
 
       {!showLogin && tab === "home" && (<>
         <section className="hero" style={HERO_IMG ? { backgroundImage: "linear-gradient(#0007,#000b),url(" + HERO_IMG + ")" } : {}}>
-          <div className="crown">👑</div>
-          <div className="big">RAPLIKE <span>509</span></div>
+          <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="heroimg" />
           <p className="tagl">{t.hero}</p>
           <div className="slog">{t.slogan}</div>
         </section>
