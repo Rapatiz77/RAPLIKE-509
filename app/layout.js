@@ -2,6 +2,7 @@ import AnimatedBackground from "../components/AnimatedBackground";
 
 export const metadata = {
   title: "RAPLIKE 509",
+  manifest: "/manifest.webmanifest",
   description: "La plateforme des artistes haïtiens et de la diaspora",
   icons: {
     icon: [
