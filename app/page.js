@@ -207,7 +207,8 @@ export default function Home() {
   const [pr, setPr] = useState({ t: 0, d: 0 });
   const aRef = useRef(null);
   const t = { ...T.fr, ...T[lang || "fr"] };
-
+  const t = { ...T.fr, ...T[lang || "fr"] };
+  useEffect(() => { document.body.dataset.tab = artistId ? "artiste" : tab; }, [tab, artistId]);
   async function loadTracks() {
     const { data } = await supabase.from("tracks")
       .select("id,title,audio_url,cover_url,artist_id,created_at,profiles!artist_id(username,avatar_url)")
