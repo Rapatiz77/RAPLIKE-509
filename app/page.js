@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
+import Link from "next/link";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -67,6 +68,9 @@ button{font-family:inherit;cursor:pointer}
 .nav-top{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #e1112955;gap:12px}
 .logo{font-style:italic;font-weight:900;font-size:26px;letter-spacing:-1px;cursor:pointer;white-space:nowrap;margin:0}
 .logo span{color:#ef2b3a}
+.foot{text-align:center;margin:34px 0 8px;font-size:13px;color:#9a9ab3}
+.foot a,.legal a{color:#ef2b3a;text-decoration:none}
+.legal{text-align:center;color:#9a9ab3;font-size:12px;margin:14px 0 0}
 .logoimg{height:48px;width:auto;display:block;cursor:pointer}
 .links{display:none}
 .right{display:flex;gap:8px;align-items:center}
@@ -426,6 +430,7 @@ export default function Home() {
           <input type="password" placeholder={t.pass} value={pass} onChange={(e) => setPass(e.target.value)} />
           <button className="btn" onClick={logIn}>{t.loginBtn}</button>
           <button className="btn alt" onClick={signUp}>{t.signup}</button>
+          <p className="legal">{"En créant un compte, tu acceptes les "}<Link href="/conditions">{"Conditions"}</Link>{" et la "}<Link href="/confidentialite">{"Politique de confidentialité"}</Link>{"."}</p>
           <p className="msg">{msg}</p>
           <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
         </div>
@@ -607,6 +612,8 @@ export default function Home() {
           <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
         </div>
       )}
+
+      <footer className="foot"><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
 
       <nav className="bot">
         {bot.map(([k, n, ic]) => (
