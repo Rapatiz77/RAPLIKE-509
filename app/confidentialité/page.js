@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 // ✏️ Modifie seulement ces 3 lignes :
-const EMAIL = "TON-EMAIL@exemple.com";
-const OWNER = "TON NOM OU NOM DE TON ENTREPRISE";
-const COUNTRY = "TON PAYS";
+const EMAIL = "raplike509@gmail.com";
+const OWNER = "Ing.Jean GRÉGORY a.k.a KMIKZ RAPATIZ";
+const COUNTRY = "HAÏTI";
 
 export const metadata = { title: "Politique de confidentialité - RAPLIKE 509" };
 
