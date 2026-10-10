@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const ROUGE = [255, 42, 61], BLEU = [42, 107, 255];
 const rng = (s) => () => { s |= 0; s = (s + 0x6d2b79f5) | 0; let t = Math.imul(s ^ (s >>> 15), 1 | s);
@@ -77,6 +76,7 @@ function Fond() {
 
   return (
     <>
+      <style>{`.page{background:transparent !important}`}</style>
       <canvas ref={ref} aria-hidden="true"
         style={{ position: "fixed", inset: 0, width: "100%", height: "100%", zIndex: -2, display: "block" }} />
       <div aria-hidden="true" style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none",
@@ -85,9 +85,18 @@ function Fond() {
   );
 }
 
-// Affiché partout SAUF sur la page d'accueil ("/")
+// Affiché sur tous les onglets SAUF l'accueil (l'onglet est lu dans <body data-tab>)
 export default function AnimatedBackground() {
-  const pathname = usePathname();
-  if (pathname === "/") return null;
-  return <Fond />;
+  const [actif, setActif] = useState(false);
+  useEffect(() => {
+    const maj = () => {
+      const tab = document.body.dataset.tab;
+      setActif(!!tab && tab !== "home");
+    };
+    maj();
+    const obs = new MutationObserver(maj);
+    obs.observe(document.body, { attributes: true, attributeFilter: ["data-tab"] });
+    return () => obs.disconnect();
+  }, []);
+  return actif ? <Fond /> : null;
 }
