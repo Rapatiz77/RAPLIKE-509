@@ -313,4 +313,340 @@ export default function Home() {
     setBusy(false);
   }
 
-  const likeCount = (id) => likes
+  
+const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
+  const isLiked = (id) => likes.some((l) => l.track_id === id && l.user_id === user?.id);
+  async function toggleLike(id) {
+    if (!user) { go("login"); return; }
+    if (isLiked(id)) {
+      setLikes(likes.filter((l) => !(l.track_id === id && l.user_id === user.id)));
+      await supabase.from("likes").delete().eq("track_id", id).eq("user_id", user.id);
+    } else {
+      setLikes([...likes, { track_id: id, user_id: user.id }]);
+      await supabase.from("likes").insert({ track_id: id, user_id: user.id });
+    }
+  }
+  async function addComment(id) {
+    if (!user) { go("login"); return; }
+    const body = (draft[id] || "").trim();
+    if (!body) return;
+    setDraft({ ...draft, [id]: "" });
+    await supabase.from("comments").insert({ track_id: id, user_id: user.id, body });
+    loadComments();
+  }
+
+  function load(i) {
+    const a = aRef.current;
+    if (!a || !tracks[i]) return;
+    setCur(i); a.src = tracks[i].audio_url; a.play().catch(() => {});
+  }
+  function toggle() {
+    const a = aRef.current;
+    if (!a || cur < 0) return;
+    if (a.paused) a.play().catch(() => {}); else a.pause();
+  }
+  function step(d) { if (tracks.length) load(((cur < 0 ? 0 : cur) + d + tracks.length) % tracks.length); }
+  function seek(e) {
+    const a = aRef.current;
+    if (!a || !a.duration) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    a.currentTime = ((e.clientX - r.left) / r.width) * a.duration;
+  }
+
+  const count = (id) => tracks.filter((x) => x.artist_id === id).length;
+  const thumb = (x, i) => x.cover_url ? { backgroundImage: "url(" + x.cover_url + ")" }
+    : x.profiles?.avatar_url ? { backgroundImage: "url(" + x.profiles.avatar_url + ")" }
+    : { background: "linear-gradient(135deg," + COVERS[i % 3] + ")" };
+  const Style = <style>{css}</style>;
+  const q = search.trim().toLowerCase();
+  const shown = tracks.filter((x) => !q || (x.title || "").toLowerCase().includes(q) || (x.profiles?.username || "").toLowerCase().includes(q));
+  const radios = stations.filter((s) => s.kind === "radio");
+  const tvs = stations.filter((s) => s.kind === "tv");
+  const gal = [...tracks.filter((x) => x.cover_url).map((x) => x.cover_url), ...profiles.filter((p) => p.avatar_url).map((p) => p.avatar_url)].slice(0, 12);
+  const fp = profiles.length ? profiles[slide % profiles.length] : null;
+  const curT = cur >= 0 ? tracks[cur] : null;
+  const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
+
+  function renderRow(x, i) {
+    const idx = tracks.indexOf(x);
+    const cs = comments.filter((cm) => cm.track_id === x.id);
+    const isCur = curT?.id === x.id;
+    return (
+      <div className="row" key={x.id}>
+        <div className="rh">
+          <div className="th" style={thumb(x, i)} />
+          <div className="rt"><b>{x.title}</b><small>{x.profiles?.username}</small></div>
+          <button className="pl" onClick={() => (isCur ? toggle() : load(idx))}><Icon n={isCur && playing ? "pause" : "play"} s={18} fill /></button>
+        </div>
+        <div className="act">
+          <button className={isLiked(x.id) ? "liked" : ""} onClick={() => toggleLike(x.id)}><Icon n="heart" s={20} fill={isLiked(x.id)} />{likeCount(x.id) || ""}</button>
+          <button onClick={() => setOpenC({ ...openC, [x.id]: !openC[x.id] })}><Icon n="chat" s={20} />{cs.length || ""}</button>
+        </div>
+        {openC[x.id] && (
+          <div className="cbox">
+            {cs.length === 0 && <p className="sub" style={{ margin: 0 }}>{t.nocom}</p>}
+            {cs.map((cm) => <div className="cm" key={cm.id}><b>{cm.profiles?.username}</b>{cm.body}</div>)}
+            <div className="crow">
+              <input placeholder={t.write} value={draft[x.id] || ""} onChange={(e) => setDraft({ ...draft, [x.id]: e.target.value })} />
+              <button onClick={() => addComment(x.id)}>{t.post}</button>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (!lang) return (
+    <div className="page pad">{Style}<h1 className="logo" style={{ fontSize: 42 }}>RAPLIKE <span>509</span></h1><p className="sub">{T.fr.tag}</p>
+      <div className="lang">{LANGS.map(([k, n]) => <button key={k} onClick={() => pick(k)}>{n}</button>)}</div>
+    </div>
+  );
+
+  if (user && profile === null) return (
+    <div className="page pad">{Style}<h1 className="logo">RAPLIKE <span>509</span></h1>
+      <div className="form"><h2 className="st2">{t.name}</h2>
+        <input placeholder={t.name} value={username} onChange={(e) => setUsername(e.target.value)} />
+        <button className="btn" onClick={createProfile}>{t.save}</button>
+        <p className="msg">{msg}</p>
+      </div>
+    </div>
+  );
+
+  const links = [["home", t.home, "home"], ["artists", t.artists, "users"], ["music", t.music, "music"], ["videos", t.videos, "video"], ["radio", t.radio, "radio"], ["tv", t.tv, "tv"]];
+  const bot = [["home", t.home, "home"], ["artists", t.artists, "users"], ["pub", t.pub, "plus"], ["radio", t.radio, "radio"], ["me", t.me, "user"]];
+
+  return (
+    <div className="page">{Style}
+      <audio ref={aRef}
+        onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
+        onTimeUpdate={(e) => setPr({ t: e.target.currentTime, d: e.target.duration || 0 })}
+        onEnded={() => step(1)} />
+
+      <header className="nav-top">
+        <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="logoimg" onClick={() => go("home")} />
+        <nav className="links">
+          {links.map(([k, n, ic]) => <button key={k} className={tab === k ? "on" : ""} onClick={() => go(k)}><Icon n={ic} s={18} />{n}</button>)}
+        </nav>
+        <div className="right">
+          <button className="pubb" onClick={() => go("pub")}>+ {t.pub}</button>
+          <button className="loginb" onClick={() => go(user ? "me" : "login")}>{user ? (profile?.username || t.me) : t.loginTop}</button>
+        </div>
+      </header>
+
+      {showLogin && (
+        <div className="form">
+          <h2 className="st2">{t.loginBtn}</h2>
+          <input type="email" placeholder={t.email} value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" placeholder={t.pass} value={pass} onChange={(e) => setPass(e.target.value)} />
+          <button className="btn" onClick={logIn}>{t.loginBtn}</button>
+          <button className="btn alt" onClick={signUp}>{t.signup}</button>
+          <p className="legal">{"En créant un compte, tu acceptes les "}<Link href="/conditions">{"Conditions"}</Link>{" et la "}<Link href="/confidentialite">{"Politique de confidentialité"}</Link>{"."}</p>
+          <p className="msg">{msg}</p>
+          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
+        </div>
+      )}
+
+      {!showLogin && tab === "home" && (<>
+        <section className="hero" style={HERO_IMG ? { backgroundImage: "linear-gradient(#0007,#000b),url(" + HERO_IMG + ")" } : {}}>
+          <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="heroimg" />
+          <p className="tagl">{t.hero}</p>
+          <div className="slog">{t.slogan}</div>
+        </section>
+
+        <div className="quick">
+          {[["radio", "radio", t.radio, t.radioSub], ["tv", "tv", t.tv, t.tvSub], ["music", "music", t.music, t.musSub], ["videos", "video", t.videos, t.vidSub]].map(([k, ic, n, s]) => (
+            <button className="qc" key={k} onClick={() => go(k)}><Icon n={ic} s={34} /><span><b>{n}</b><small>{s}</small></span></button>
+          ))}
+        </div>
+
+        <div className="cols">
+          <section className="panel">
+            <div className="artgrid">
+              <div>
+                <h3 className="ptitle">{t.artists}</h3>
+                <p className="sub" style={{ marginTop: 6 }}>{t.artistsSub}</p>
+                {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
+                {profiles.slice(0, 4).map((p) => (
+                  <button className="arow" key={p.id} onClick={() => openArtist(p.id)}>
+                    <Avatar p={p} size="md" /><span><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small></span>
+                  </button>
+                ))}
+                <button className="outl" onClick={() => go("artists")}>{t.seeArtists} →</button>
+              </div>
+              <div className="feat" style={fp?.avatar_url ? { backgroundImage: "linear-gradient(90deg,#000d,#0004),url(" + fp.avatar_url + ")" } : {}}>
+                {fp && (<>
+                  <button className="arr l" onClick={() => setSlide((slide - 1 + profiles.length) % profiles.length)}>‹</button>
+                  <div className="ft">
+                    <span className="tag">{t.featured}</span>
+                    <h2>{fp.username}</h2>
+                    <p>{(fp.bio || t.noBio).slice(0, 70)}</p>
+                    <button className="outl small" onClick={() => openArtist(fp.id)}>{t.seeProfile} →</button>
+                  </div>
+                  <button className="arr r" onClick={() => setSlide((slide + 1) % profiles.length)}>›</button>
+                  <div className="dots">{profiles.slice(0, 6).map((_, i) => <i key={i} className={i === slide % profiles.length ? "on" : ""} />)}</div>
+                </>)}
+              </div>
+            </div>
+          </section>
+
+          <aside className="panel">
+            <h3 className="ptitle">{t.posts}</h3>
+            {tracks.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.none}</p>}
+            {tracks.slice(0, 4).map((x, i) => (
+              <button className="post" key={x.id} onClick={() => load(tracks.indexOf(x))}>
+                <div className="th" style={thumb(x, i)} />
+                <span className="pt"><b>{x.title}</b><small>{x.profiles?.username}</small><small>{ago(x.created_at, lang)}</small></span>
+                <span className="hc"><Icon n="heart" s={16} />{likeCount(x.id)}</span>
+              </button>
+            ))}
+            <button className="outl" onClick={() => go("music")}>{t.seePosts} →</button>
+          </aside>
+        </div>
+
+        <section className="panel">
+          <h3 className="ptitle">{t.gallery}</h3>
+          <p className="sub" style={{ marginTop: 6 }}>{t.gallerySub}</p>
+          {gal.length === 0 && <p className="sub">{t.noPhoto}</p>}
+          <div className="gal">{gal.map((u, i) => <i key={i} style={{ backgroundImage: "url(" + u + ")" }} />)}</div>
+        </section>
+      </>)}
+
+      {!showLogin && tab === "artists" && (<>
+        <h2 className="st2">{t.artists}</h2>
+        {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
+        <div className="agrid">
+          {profiles.map((p) => (
+            <button className="acard" key={p.id} onClick={() => openArtist(p.id)}>
+              <Avatar p={p} size="big" /><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small>
+            </button>
+          ))}
+        </div>
+      </>)}
+
+      {!showLogin && tab === "artist" && (() => {
+        const p = profiles.find((x) => x.id === artistId);
+        if (!p) return <p className="sub" style={{ marginTop: 20 }}>{t.noArtists}</p>;
+        const list = tracks.filter((x) => x.artist_id === p.id);
+        return (<>
+          <button className="outl small" onClick={() => go("artists")} style={{ marginTop: 16 }}>← {t.back}</button>
+          <div style={{ textAlign: "center" }}>
+            <Avatar p={p} size="big" />
+            <h2 className="st2" style={{ margin: "8px 0" }}>{p.username}</h2>
+            <p className="sub">{p.bio || t.noBio}</p>
+            <p className="sub">{list.length} {t.tracksN}</p>
+          </div>
+          {list.map((x, i) => renderRow(x, i))}
+        </>);
+      })()}
+
+      {!showLogin && tab === "music" && (<>
+        <h2 className="st2">{t.music}</h2>
+        <input placeholder={t.search} value={search} onChange={(e) => setSearch(e.target.value)} style={{ marginTop: 0, marginBottom: 14 }} />
+        {shown.length === 0 && <p className="sub">{t.none}</p>}
+        {shown.map((x, i) => renderRow(x, i))}
+      </>)}
+
+      {!showLogin && tab === "videos" && (<>
+        <h2 className="st2">{t.videos}</h2>
+        {videos.length === 0 && <p className="sub">{t.novid}</p>}
+        {curV && (
+          <div className="stn">
+            <iframe className="vid" src={"https://www.youtube.com/embed/" + curV.youtube_id} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+            <strong style={{ display: "block", marginTop: 10 }}>{curV.title}</strong>
+            <small style={{ color: "#9a9ab3" }}>{curV.artist}</small>
+          </div>
+        )}
+        <div className="agrid">
+          {videos.map((v) => (
+            <button className="acard vcard" key={v.youtube_id} onClick={() => { setCurV(v); if (typeof window !== "undefined") window.scrollTo(0, 0); }}>
+              <img src={"https://img.youtube.com/vi/" + v.youtube_id + "/mqdefault.jpg"} alt="" />
+              <b>{v.title}</b><small>{v.artist}</small>
+            </button>
+          ))}
+        </div>
+      </>)}
+
+      {!showLogin && tab === "radio" && (<>
+        <h2 className="st2">{t.radio}</h2>
+        {radios.length === 0 && <p className="sub">{t.nostat}</p>}
+        {radios.map((s) => (
+          <div className="stn" key={s.id}>
+            <div className="liveb"><i />{t.live}</div>
+            <strong>{s.name}</strong>
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe src={s.stream_url.slice(7)} allow="autoplay" style={{ width: "100%", height: 170, border: 0, marginTop: 10 }} />
+              : <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />}
+          </div>
+        ))}
+      </>)}
+
+      {!showLogin && tab === "tv" && (<>
+        <h2 className="st2">{t.tv}</h2>
+        {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
+        {tvs.map((s) => (
+          <div className="stn" key={s.id}>
+            <div className="liveb"><i />{t.live}</div>
+            <strong>{s.name}</strong>
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe className="vid" src={s.stream_url.slice(7)} allow="autoplay; fullscreen" allowFullScreen />
+              : s.stream_url.includes("embed")
+                ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
+                : <video className="vid" controls playsInline src={s.stream_url} />}
+          </div>
+        ))}
+      </>)}
+
+      {user && tab === "pub" && (
+        <div className="form">
+          <h2 className="st2">{t.pub}</h2>
+          <input placeholder={t.title} value={title} onChange={(e) => setTitle(e.target.value)} />
+          <label>Audio</label>
+          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
+          <label>{t.cover}</label>
+          <input type="file" accept="image/*" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
+          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
+          <p className="msg">{msg}</p>
+        </div>
+      )}
+
+      {user && tab === "me" && (
+        <div className="form">
+          <Avatar p={profile} size="big" />
+          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}</h2>
+          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
+          <label>{t.photo}</label>
+          <input type="file" accept="image/*" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
+          <label>{t.bio}</label>
+          <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
+          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
+          <p className="msg">{msg}</p>
+          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
+          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
+        </div>
+      )}
+
+      {curT && (
+        <div className="mini">
+          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
+          <div className="mt">
+            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
+            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
+          </div>
+          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
+          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
+          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
+        </div>
+      )}
+
+      <footer className="foot"><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
+
+      <nav className="bot">
+        {bot.map(([k, n, ic]) => (
+          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
+            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
+          </button>
+        ))}
+      </nav>
+    </div>
+  );
+}
