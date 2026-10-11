@@ -11,10 +11,10 @@ const supabase = createClient(
 const HERO_IMG = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT" },
-  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE" },
-  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK" },
-  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO" },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant." },
+  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet." },
+  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo." },
+  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos." },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#1f5cff,#07070c", "#e8262f,#07070c", "#1f5cff,#e8262f"];
@@ -117,6 +117,8 @@ button{font-family:inherit;cursor:pointer}
 .acard{background:#ffffff08;border:1px solid #e1112955;border-radius:14px;padding:16px 10px;color:#fff;text-align:center}
 .acard b{display:block;margin-top:8px}
 .acard small{color:#9a9ab3}
+.vcard{padding:8px 8px 12px}
+.vcard img{width:100%;display:block;border-radius:10px;aspect-ratio:16/9;object-fit:cover}
 h2.st2{font-size:20px;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 12px}
 .sub{color:#9a9ab3;margin:0 0 16px;font-size:14px}
 input,textarea{display:block;width:100%;padding:14px 16px;margin-top:10px;border-radius:14px;border:1px solid #ffffff18;background:#ffffff0a;color:#fff;font-size:16px;font-family:inherit}
@@ -205,6 +207,8 @@ export default function Home() {
   const [likes, setLikes] = useState([]);
   const [comments, setComments] = useState([]);
   const [stations, setStations] = useState([]);
+  const [videos, setVideos] = useState([]);
+  const [curV, setCurV] = useState(null);
   const [search, setSearch] = useState("");
   const [openC, setOpenC] = useState({});
   const [draft, setDraft] = useState({});
@@ -239,12 +243,17 @@ export default function Home() {
     const { data } = await supabase.from("stations").select("id,kind,name,stream_url").order("created_at", { ascending: true });
     setStations(data || []);
   }
+  async function loadVideos() {
+    const { data } = await supabase.from("videos").select("*");
+    setVideos(data || []);
+    if (data && data.length) setCurV((c) => c || data[0]);
+  }
 
   useEffect(() => {
     try { const l = localStorage.getItem("lang"); if (l && T[l]) setLang(l); } catch (e) {}
     supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
     const { data: s } = supabase.auth.onAuthStateChange((_e, x) => setUser(x?.user ?? null));
-    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations();
+    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos();
     return () => s.subscription.unsubscribe();
   }, []);
 
@@ -304,324 +313,4 @@ export default function Home() {
     setBusy(false);
   }
 
-  const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
-  const isLiked = (id) => likes.some((l) => l.track_id === id && l.user_id === user?.id);
-  async function toggleLike(id) {
-    if (!user) { go("login"); return; }
-    if (isLiked(id)) {
-      setLikes(likes.filter((l) => !(l.track_id === id && l.user_id === user.id)));
-      await supabase.from("likes").delete().eq("track_id", id).eq("user_id", user.id);
-    } else {
-      setLikes([...likes, { track_id: id, user_id: user.id }]);
-      await supabase.from("likes").insert({ track_id: id, user_id: user.id });
-    }
-  }
-  async function addComment(id) {
-    if (!user) { go("login"); return; }
-    const body = (draft[id] || "").trim();
-    if (!body) return;
-    setDraft({ ...draft, [id]: "" });
-    await supabase.from("comments").insert({ track_id: id, user_id: user.id, body });
-    loadComments();
-  }
-
-  function load(i) {
-    const a = aRef.current;
-    if (!a || !tracks[i]) return;
-    setCur(i); a.src = tracks[i].audio_url; a.play().catch(() => {});
-  }
-  function toggle() {
-    const a = aRef.current;
-    if (!a || cur < 0) return;
-    if (a.paused) a.play().catch(() => {}); else a.pause();
-  }
-  function step(d) { if (tracks.length) load(((cur < 0 ? 0 : cur) + d + tracks.length) % tracks.length); }
-  function seek(e) {
-    const a = aRef.current;
-    if (!a || !a.duration) return;
-    const r = e.currentTarget.getBoundingClientRect();
-    a.currentTime = ((e.clientX - r.left) / r.width) * a.duration;
-  }
-
-  const count = (id) => tracks.filter((x) => x.artist_id === id).length;
-  const thumb = (x, i) => x.cover_url ? { backgroundImage: "url(" + x.cover_url + ")" }
-    : x.profiles?.avatar_url ? { backgroundImage: "url(" + x.profiles.avatar_url + ")" }
-    : { background: "linear-gradient(135deg," + COVERS[i % 3] + ")" };
-  const Style = <style>{css}</style>;
-  const q = search.trim().toLowerCase();
-  const shown = tracks.filter((x) => !q || (x.title || "").toLowerCase().includes(q) || (x.profiles?.username || "").toLowerCase().includes(q));
-  const radios = stations.filter((s) => s.kind === "radio");
-  const tvs = stations.filter((s) => s.kind === "tv");
-  const gal = [...tracks.filter((x) => x.cover_url).map((x) => x.cover_url), ...profiles.filter((p) => p.avatar_url).map((p) => p.avatar_url)].slice(0, 12);
-  const fp = profiles.length ? profiles[slide % profiles.length] : null;
-  const curT = cur >= 0 ? tracks[cur] : null;
-  const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
-
-  function renderRow(x, i) {
-    const idx = tracks.indexOf(x);
-    const cs = comments.filter((cm) => cm.track_id === x.id);
-    const isCur = curT?.id === x.id;
-    return (
-      <div className="row" key={x.id}>
-        <div className="rh">
-          <div className="th" style={thumb(x, i)} />
-          <div className="rt"><b>{x.title}</b><small>{x.profiles?.username}</small></div>
-          <button className="pl" onClick={() => (isCur ? toggle() : load(idx))}><Icon n={isCur && playing ? "pause" : "play"} s={18} fill /></button>
-        </div>
-        <div className="act">
-          <button className={isLiked(x.id) ? "liked" : ""} onClick={() => toggleLike(x.id)}><Icon n="heart" s={20} fill={isLiked(x.id)} />{likeCount(x.id) || ""}</button>
-          <button onClick={() => setOpenC({ ...openC, [x.id]: !openC[x.id] })}><Icon n="chat" s={20} />{cs.length || ""}</button>
-        </div>
-        {openC[x.id] && (
-          <div className="cbox">
-            {cs.length === 0 && <p className="sub" style={{ margin: 0 }}>{t.nocom}</p>}
-            {cs.map((cm) => <div className="cm" key={cm.id}><b>{cm.profiles?.username}</b>{cm.body}</div>)}
-            <div className="crow">
-              <input placeholder={t.write} value={draft[x.id] || ""} onChange={(e) => setDraft({ ...draft, [x.id]: e.target.value })} />
-              <button onClick={() => addComment(x.id)}>{t.post}</button>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  if (!lang) return (
-    <div className="page pad">{Style}<h1 className="logo" style={{ fontSize: 42 }}>RAPLIKE <span>509</span></h1><p className="sub">{T.fr.tag}</p>
-      <div className="lang">{LANGS.map(([k, n]) => <button key={k} onClick={() => pick(k)}>{n}</button>)}</div>
-    </div>
-  );
-
-  if (user && profile === null) return (
-    <div className="page pad">{Style}<h1 className="logo">RAPLIKE <span>509</span></h1>
-      <div className="form"><h2 className="st2">{t.name}</h2>
-        <input placeholder={t.name} value={username} onChange={(e) => setUsername(e.target.value)} />
-        <button className="btn" onClick={createProfile}>{t.save}</button>
-        <p className="msg">{msg}</p>
-      </div>
-    </div>
-  );
-
-  const links = [["home", t.home, "home"], ["artists", t.artists, "users"], ["music", t.music, "music"], ["videos", t.videos, "video"], ["radio", t.radio, "radio"], ["tv", t.tv, "tv"]];
-  const bot = [["home", t.home, "home"], ["artists", t.artists, "users"], ["pub", t.pub, "plus"], ["radio", t.radio, "radio"], ["me", t.me, "user"]];
-
-  return (
-    <div className="page">{Style}
-      <audio ref={aRef}
-        onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
-        onTimeUpdate={(e) => setPr({ t: e.target.currentTime, d: e.target.duration || 0 })}
-        onEnded={() => step(1)} />
-
-      <header className="nav-top">
-        <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="logoimg" onClick={() => go("home")} />
-        <nav className="links">
-          {links.map(([k, n, ic]) => <button key={k} className={tab === k ? "on" : ""} onClick={() => go(k)}><Icon n={ic} s={18} />{n}</button>)}
-        </nav>
-        <div className="right">
-          <button className="pubb" onClick={() => go("pub")}>+ {t.pub}</button>
-          <button className="loginb" onClick={() => go(user ? "me" : "login")}>{user ? (profile?.username || t.me) : t.loginTop}</button>
-        </div>
-      </header>
-
-      {showLogin && (
-        <div className="form">
-          <h2 className="st2">{t.loginBtn}</h2>
-          <input type="email" placeholder={t.email} value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder={t.pass} value={pass} onChange={(e) => setPass(e.target.value)} />
-          <button className="btn" onClick={logIn}>{t.loginBtn}</button>
-          <button className="btn alt" onClick={signUp}>{t.signup}</button>
-          <p className="legal">{"En créant un compte, tu acceptes les "}<Link href="/conditions">{"Conditions"}</Link>{" et la "}<Link href="/confidentialite">{"Politique de confidentialité"}</Link>{"."}</p>
-          <p className="msg">{msg}</p>
-          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
-        </div>
-      )}
-
-      {!showLogin && tab === "home" && (<>
-        <section className="hero" style={HERO_IMG ? { backgroundImage: "linear-gradient(#0007,#000b),url(" + HERO_IMG + ")" } : {}}>
-          <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="heroimg" />
-          <p className="tagl">{t.hero}</p>
-          <div className="slog">{t.slogan}</div>
-        </section>
-
-        <div className="quick">
-          {[["radio", "radio", t.radio, t.radioSub], ["tv", "tv", t.tv, t.tvSub], ["music", "music", t.music, t.musSub], ["videos", "video", t.videos, t.vidSub]].map(([k, ic, n, s]) => (
-            <button className="qc" key={k} onClick={() => go(k)}><Icon n={ic} s={34} /><span><b>{n}</b><small>{s}</small></span></button>
-          ))}
-        </div>
-
-        <div className="cols">
-          <section className="panel">
-            <div className="artgrid">
-              <div>
-                <h3 className="ptitle">{t.artists}</h3>
-                <p className="sub" style={{ marginTop: 6 }}>{t.artistsSub}</p>
-                {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
-                {profiles.slice(0, 4).map((p) => (
-                  <button className="arow" key={p.id} onClick={() => openArtist(p.id)}>
-                    <Avatar p={p} size="md" /><span><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small></span>
-                  </button>
-                ))}
-                <button className="outl" onClick={() => go("artists")}>{t.seeArtists} →</button>
-              </div>
-              <div className="feat" style={fp?.avatar_url ? { backgroundImage: "linear-gradient(90deg,#000d,#0004),url(" + fp.avatar_url + ")" } : {}}>
-                {fp && (<>
-                  <button className="arr l" onClick={() => setSlide((slide - 1 + profiles.length) % profiles.length)}>‹</button>
-                  <div className="ft">
-                    <span className="tag">{t.featured}</span>
-                    <h2>{fp.username}</h2>
-                    <p>{(fp.bio || t.noBio).slice(0, 70)}</p>
-                    <button className="outl small" onClick={() => openArtist(fp.id)}>{t.seeProfile} →</button>
-                  </div>
-                  <button className="arr r" onClick={() => setSlide((slide + 1) % profiles.length)}>›</button>
-                  <div className="dots">{profiles.slice(0, 6).map((_, i) => <i key={i} className={i === slide % profiles.length ? "on" : ""} />)}</div>
-                </>)}
-              </div>
-            </div>
-          </section>
-
-          <aside className="panel">
-            <h3 className="ptitle">{t.posts}</h3>
-            {tracks.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.none}</p>}
-            {tracks.slice(0, 4).map((x, i) => (
-              <button className="post" key={x.id} onClick={() => load(tracks.indexOf(x))}>
-                <div className="th" style={thumb(x, i)} />
-                <span className="pt"><b>{x.title}</b><small>{x.profiles?.username}</small><small>{ago(x.created_at, lang)}</small></span>
-                <span className="hc"><Icon n="heart" s={16} />{likeCount(x.id)}</span>
-              </button>
-            ))}
-            <button className="outl" onClick={() => go("music")}>{t.seePosts} →</button>
-          </aside>
-        </div>
-
-        <section className="panel">
-          <h3 className="ptitle">{t.gallery}</h3>
-          <p className="sub" style={{ marginTop: 6 }}>{t.gallerySub}</p>
-          {gal.length === 0 && <p className="sub">{t.noPhoto}</p>}
-          <div className="gal">{gal.map((u, i) => <i key={i} style={{ backgroundImage: "url(" + u + ")" }} />)}</div>
-        </section>
-      </>)}
-
-      {!showLogin && tab === "artists" && (<>
-        <h2 className="st2">{t.artists}</h2>
-        {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
-        <div className="agrid">
-          {profiles.map((p) => (
-            <button className="acard" key={p.id} onClick={() => openArtist(p.id)}>
-              <Avatar p={p} size="big" /><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small>
-            </button>
-          ))}
-        </div>
-      </>)}
-
-      {!showLogin && tab === "artist" && (() => {
-        const p = profiles.find((x) => x.id === artistId);
-        if (!p) return <p className="sub" style={{ marginTop: 20 }}>{t.noArtists}</p>;
-        const list = tracks.filter((x) => x.artist_id === p.id);
-        return (<>
-          <button className="outl small" onClick={() => go("artists")} style={{ marginTop: 16 }}>← {t.back}</button>
-          <div style={{ textAlign: "center" }}>
-            <Avatar p={p} size="big" />
-            <h2 className="st2" style={{ margin: "8px 0" }}>{p.username}</h2>
-            <p className="sub">{p.bio || t.noBio}</p>
-            <p className="sub">{list.length} {t.tracksN}</p>
-          </div>
-          {list.map((x, i) => renderRow(x, i))}
-        </>);
-      })()}
-
-      {!showLogin && tab === "music" && (<>
-        <h2 className="st2">{t.music}</h2>
-        <input placeholder={t.search} value={search} onChange={(e) => setSearch(e.target.value)} style={{ marginTop: 0, marginBottom: 14 }} />
-        {shown.length === 0 && <p className="sub">{t.none}</p>}
-        {shown.map((x, i) => renderRow(x, i))}
-      </>)}
-
-      {!showLogin && tab === "videos" && (<>
-        <h2 className="st2">{t.videos}</h2>
-        <p className="sub">{t.soon}</p>
-      </>)}
-
-      {!showLogin && tab === "radio" && (<>
-        <h2 className="st2">{t.radio}</h2>
-        {radios.length === 0 && <p className="sub">{t.nostat}</p>}
-        {radios.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:")
-              ? <iframe src={s.stream_url.slice(7)} allow="autoplay" style={{ width: "100%", height: 170, border: 0, marginTop: 10 }} />
-              : <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />}
-          </div>
-        ))}
-      </>)}
-
-      {!showLogin && tab === "tv" && (<>
-        <h2 className="st2">{t.tv}</h2>
-        {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
-        {tvs.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:")
-              ? <iframe className="vid" src={s.stream_url.slice(7)} allow="autoplay; fullscreen" allowFullScreen />
-              : s.stream_url.includes("embed")
-                ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
-                : <video className="vid" controls playsInline src={s.stream_url} />}
-          </div>
-        ))}
-      </>)}
-
-      {user && tab === "pub" && (
-        <div className="form">
-          <h2 className="st2">{t.pub}</h2>
-          <input placeholder={t.title} value={title} onChange={(e) => setTitle(e.target.value)} />
-          <label>Audio</label>
-          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
-          <label>{t.cover}</label>
-          <input type="file" accept="image/*" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
-          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
-          <p className="msg">{msg}</p>
-        </div>
-      )}
-
-      {user && tab === "me" && (
-        <div className="form">
-          <Avatar p={profile} size="big" />
-          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}</h2>
-          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
-          <label>{t.photo}</label>
-          <input type="file" accept="image/*" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
-          <label>{t.bio}</label>
-          <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
-          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
-          <p className="msg">{msg}</p>
-          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
-          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
-        </div>
-      )}
-
-      {curT && (
-        <div className="mini">
-          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
-          <div className="mt">
-            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
-            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
-          </div>
-          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
-          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
-          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
-        </div>
-      )}
-
-      <footer className="foot"><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
-
-      <nav className="bot">
-        {bot.map(([k, n, ic]) => (
-          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
-            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
-          </button>
-        ))}
-      </nav>
-    </div>
-  );
-}
+  const likeCount = (id) => likes
