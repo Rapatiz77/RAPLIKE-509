@@ -643,4 +643,98 @@ export default function Home() {
         <div className="stn">
           {rOn && <div className="liveb"><i />{t.live}</div>}
           <strong>RAPLIKE 509 Radio</strong>
-          {rList.length === 0 && <p className="sub" style={{ marginT
+          {rList.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.noRadio}</p>}
+          {rList.length > 0 && (<>
+            {rOn && rNow && (<>
+              <p className="sub" style={{ margin: "10px 0 0" }}>{t.nowP} :</p>
+              <b style={{ display: "block" }}>{rNow.title}</b>
+              <small style={{ color: "#9a9ab3" }}>{rNow.artist}</small>
+              <div className="bar"><i style={{ width: (rNow.duration_seconds ? (rInfo.off / rNow.duration_seconds) * 100 : 0) + "%" }} /></div>
+              {rNext && <p className="sub" style={{ margin: "10px 0 0" }}>{t.nextP} : {rNext.title}</p>}
+            </>)}
+            <button className="btn" onClick={rOn ? stopRadio : startRadio}>{rOn ? t.stopR : t.listen}</button>
+          </>)}
+        </div>
+
+        {radios.length === 0 && <p className="sub">{t.nostat}</p>}
+        {radios.map((s) => (
+          <div className="stn" key={s.id}>
+            <div className="liveb"><i />{t.live}</div>
+            <strong>{s.name}</strong>
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe src={s.stream_url.slice(7)} allow="autoplay" style={{ width: "100%", height: 170, border: 0, marginTop: 10 }} />
+              : <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />}
+          </div>
+        ))}
+      </>)}
+
+      {!showLogin && tab === "tv" && (<>
+        <h2 className="st2">{t.tv}</h2>
+        {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
+        {tvs.map((s) => (
+          <div className="stn" key={s.id}>
+            <div className="liveb"><i />{t.live}</div>
+            <strong>{s.name}</strong>
+            {s.stream_url.startsWith("iframe:")
+              ? <iframe className="vid" src={s.stream_url.slice(7)} allow="autoplay; fullscreen" allowFullScreen />
+              : s.stream_url.includes("embed")
+                ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
+                : <video className="vid" controls playsInline src={s.stream_url} />}
+          </div>
+        ))}
+      </>)}
+
+      {user && tab === "pub" && (
+        <div className="form">
+          <h2 className="st2">{t.pub}</h2>
+          <input placeholder={t.title} value={title} onChange={(e) => setTitle(e.target.value)} />
+          <label>Audio</label>
+          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
+          <label>{t.cover}</label>
+          <input type="file" accept="image/*" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
+          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
+          <p className="msg">{msg}</p>
+        </div>
+      )}
+
+      {user && tab === "me" && (
+        <div className="form">
+          <Avatar p={profile} size="big" />
+          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}</h2>
+          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
+          <label>{t.photo}</label>
+          <input type="file" accept="image/*" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
+          <label>{t.bio}</label>
+          <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
+          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
+          <p className="msg">{msg}</p>
+          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
+          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
+        </div>
+      )}
+
+      {curT && (
+        <div className="mini">
+          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
+          <div className="mt">
+            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
+            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
+          </div>
+          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
+          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
+          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
+        </div>
+      )}
+
+      <footer className="foot"><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
+
+      <nav className="bot">
+        {bot.map(([k, n, ic]) => (
+          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
+            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
+          </button>
+        ))}
+      </nav>
+    </div>
+  );
+}
