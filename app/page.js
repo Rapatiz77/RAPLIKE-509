@@ -11,10 +11,10 @@ const supabase = createClient(
 const HERO_IMG = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant." },
-  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet." },
-  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo." },
-  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos." },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant." },
+  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now." },
+  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a." },
+  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora." },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#1f5cff,#07070c", "#e8262f,#07070c", "#1f5cff,#e8262f"];
@@ -57,6 +57,19 @@ function ago(d, lang) {
     if (s < 86400) return r.format(-Math.floor(s / 3600), "hour");
     return r.format(-Math.floor(s / 86400), "day");
   } catch (e) { return ""; }
+}
+
+// Radio virtuelle : calcule quel titre passe maintenant, d'après l'heure
+function radioNow(list) {
+  const total = list.reduce((s, x) => s + (x.duration_seconds || 0), 0);
+  if (!list.length || total <= 0) return null;
+  let p = (Date.now() / 1000) % total;
+  for (let i = 0; i < list.length; i++) {
+    const d = list[i].duration_seconds || 0;
+    if (p < d) return { i, off: p };
+    p -= d;
+  }
+  return { i: 0, off: 0 };
 }
 
 const css = `
@@ -216,7 +229,12 @@ export default function Home() {
   const [cur, setCur] = useState(-1);
   const [playing, setPlaying] = useState(false);
   const [pr, setPr] = useState({ t: 0, d: 0 });
+  const [rList, setRList] = useState([]);
+  const [rOn, setROn] = useState(false);
+  const [rInfo, setRInfo] = useState({ i: 0, off: 0 });
   const aRef = useRef(null);
+  const rRef = useRef(null);
+  const rIdx = useRef(-1);
   const t = { ...T.fr, ...T[lang || "fr"] };
   useEffect(() => { document.body.dataset.tab = artistId ? "artiste" : tab; }, [tab, artistId]);
   async function loadTracks() {
@@ -248,14 +266,60 @@ export default function Home() {
     setVideos(data || []);
     if (data && data.length) setCurV((c) => c || data[0]);
   }
+  async function loadRadio() {
+    const { data } = await supabase.from("radio_playlist")
+      .select("position,title,artist,audio_url,duration_seconds")
+      .order("position", { ascending: true });
+    setRList(data || []);
+  }
+
+  // Radio virtuelle : synchronise le lecteur avec l'heure
+  function syncRadio() {
+    const n = radioNow(rList);
+    const a = rRef.current;
+    if (!n || !a) return;
+    setRInfo(n);
+    if (rIdx.current !== n.i) {
+      rIdx.current = n.i;
+      a.src = rList[n.i].audio_url;
+      a.dataset.off = String(n.off);
+      a.load();
+      a.play().catch(() => {});
+    } else if (a.duration && !a.seeking && Math.abs(a.currentTime - n.off) > 4) {
+      a.currentTime = n.off;
+      if (a.paused) a.play().catch(() => {});
+    } else if (a.paused && a.duration) {
+      a.play().catch(() => {});
+    }
+  }
+  function startRadio() {
+    if (!rList.length) return;
+    const m = aRef.current;
+    if (m) m.pause();
+    rIdx.current = -1;
+    syncRadio();
+    setROn(true);
+  }
+  function stopRadio() {
+    const a = rRef.current;
+    if (a) { a.pause(); a.removeAttribute("src"); a.load(); }
+    rIdx.current = -1;
+    setROn(false);
+  }
 
   useEffect(() => {
     try { const l = localStorage.getItem("lang"); if (l && T[l]) setLang(l); } catch (e) {}
     supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
     const { data: s } = supabase.auth.onAuthStateChange((_e, x) => setUser(x?.user ?? null));
-    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos();
+    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos(); loadRadio();
     return () => s.subscription.unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (!rOn) return;
+    const id = setInterval(syncRadio, 1000);
+    return () => clearInterval(id);
+  }, [rOn, rList]);
 
   useEffect(() => {
     if (!user) { setProfile(undefined); return; }
@@ -313,8 +377,7 @@ export default function Home() {
     setBusy(false);
   }
 
-  
-const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
+  const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
   const isLiked = (id) => likes.some((l) => l.track_id === id && l.user_id === user?.id);
   async function toggleLike(id) {
     if (!user) { go("login"); return; }
@@ -366,6 +429,8 @@ const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
   const fp = profiles.length ? profiles[slide % profiles.length] : null;
   const curT = cur >= 0 ? tracks[cur] : null;
   const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
+  const rNow = rList[rInfo.i] || null;
+  const rNext = rList.length ? rList[(rInfo.i + 1) % rList.length] : null;
 
   function renderRow(x, i) {
     const idx = tracks.indexOf(x);
@@ -418,9 +483,15 @@ const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
   return (
     <div className="page">{Style}
       <audio ref={aRef}
-        onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
+        onPlay={() => { setPlaying(true); if (rOn) stopRadio(); }} onPause={() => setPlaying(false)}
         onTimeUpdate={(e) => setPr({ t: e.target.currentTime, d: e.target.duration || 0 })}
         onEnded={() => step(1)} />
+      <audio ref={rRef} preload="auto"
+        onLoadedMetadata={(e) => {
+          const o = parseFloat(e.target.dataset.off || "0");
+          if (o > 0 && o < (e.target.duration || 0)) e.target.currentTime = o;
+        }}
+        onEnded={syncRadio} />
 
       <header className="nav-top">
         <img src="/logo-raplike.webp" alt="RAPLIKE 509" className="logoimg" onClick={() => go("home")} />
@@ -568,85 +639,8 @@ const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
 
       {!showLogin && tab === "radio" && (<>
         <h2 className="st2">{t.radio}</h2>
-        {radios.length === 0 && <p className="sub">{t.nostat}</p>}
-        {radios.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:")
-              ? <iframe src={s.stream_url.slice(7)} allow="autoplay" style={{ width: "100%", height: 170, border: 0, marginTop: 10 }} />
-              : <audio controls src={s.stream_url} preload="none" style={{ marginTop: 10 }} />}
-          </div>
-        ))}
-      </>)}
 
-      {!showLogin && tab === "tv" && (<>
-        <h2 className="st2">{t.tv}</h2>
-        {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
-        {tvs.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:")
-              ? <iframe className="vid" src={s.stream_url.slice(7)} allow="autoplay; fullscreen" allowFullScreen />
-              : s.stream_url.includes("embed")
-                ? <iframe className="vid" src={s.stream_url} allow="autoplay; fullscreen" allowFullScreen />
-                : <video className="vid" controls playsInline src={s.stream_url} />}
-          </div>
-        ))}
-      </>)}
-
-      {user && tab === "pub" && (
-        <div className="form">
-          <h2 className="st2">{t.pub}</h2>
-          <input placeholder={t.title} value={title} onChange={(e) => setTitle(e.target.value)} />
-          <label>Audio</label>
-          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
-          <label>{t.cover}</label>
-          <input type="file" accept="image/*" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
-          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
-          <p className="msg">{msg}</p>
-        </div>
-      )}
-
-      {user && tab === "me" && (
-        <div className="form">
-          <Avatar p={profile} size="big" />
-          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}</h2>
-          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
-          <label>{t.photo}</label>
-          <input type="file" accept="image/*" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
-          <label>{t.bio}</label>
-          <textarea value={bio} onChange={(e) => setBio(e.target.value)} />
-          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
-          <p className="msg">{msg}</p>
-          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
-          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
-        </div>
-      )}
-
-      {curT && (
-        <div className="mini">
-          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
-          <div className="mt">
-            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
-            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
-          </div>
-          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
-          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
-          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
-        </div>
-      )}
-
-      <footer className="foot"><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
-
-      <nav className="bot">
-        {bot.map(([k, n, ic]) => (
-          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
-            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
-          </button>
-        ))}
-      </nav>
-    </div>
-  );
-}
+        <div className="stn">
+          {rOn && <div className="liveb"><i />{t.live}</div>}
+          <strong>RAPLIKE 509 Radio</strong>
+          {rList.length === 0 && <p className="sub" style={{ marginT
