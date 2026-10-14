@@ -18,6 +18,9 @@ export const metadata = {
     "RAPLIKE 509",
   ],
   alternates: { canonical: "/" },
+  verification: {
+    google: "1FS20txJ0S7rtxJgDly-YQzP0qwcibYNzLqhWb1o6Jg",
+  },
   openGraph: {
     title: "RAPLIKE 509",
     description: "La plateforme des artistes haïtiens et de la diaspora",
