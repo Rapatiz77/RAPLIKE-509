@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.raplike509.app",
+      "sha256_cert_fingerprints": [
+        "95:FB:14:DD:D7:F9:7F:05:D2:E3:16:7B:DC:95:0D:ED:33:62:BD:2E:DA:F6:1A:BA:E5:05:01:C6:F4:6C:65:8A"
+      ]
+    }
+  }
+]
