@@ -11,10 +11,10 @@ const supabase = createClient(
 const HERO_IMG = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter" },
-  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen" },
-  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute" },
-  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar" },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter" },
+  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen" },
+  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute" },
+  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar" },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#1f5cff,#07070c", "#e8262f,#07070c", "#1f5cff,#e8262f"];
@@ -128,6 +128,15 @@ button{font-family:inherit;cursor:pointer}
 .dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:8px}
 .dots i{width:9px;height:9px;border-radius:50%;background:#ffffff44}
 .dots i.on{background:#e11129}
+.fade{position:relative;height:340px;border-radius:16px;overflow:hidden;border:1px solid #e1112966;background:#0a0a14;margin-top:12px}
+.fs{position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;transition:opacity 1.3s ease-in-out;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:20px;pointer-events:none}
+.fs.on{opacity:1;pointer-events:auto}
+.fcap{position:relative;z-index:2;padding-bottom:18px}
+.fcap h3{margin:8px 0 0;font-size:30px;font-style:italic;text-shadow:0 2px 14px #000}
+.fcap small{display:block;color:#e0e0ee;margin-top:2px}
+.fdots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:3}
+.fdots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:#ffffff55}
+.fdots button.on{background:#e11129}
 .post{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;border-bottom:1px solid #ffffff12;color:#fff;padding:10px 0;text-align:left}
 .pt{flex:1;min-width:0}
 .pt b,.pt small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -219,6 +228,8 @@ audio{width:100%}
   .quick{grid-template-columns:repeat(4,1fr)}
   .cols{grid-template-columns:2fr 1fr}
   .artgrid{grid-template-columns:230px 1fr}
+  .fade{height:480px}
+  .fcap h3{font-size:44px}
 }
 `;
 
@@ -249,6 +260,7 @@ export default function Home() {
   const [openC, setOpenC] = useState({});
   const [draft, setDraft] = useState({});
   const [slide, setSlide] = useState(0);
+  const [fi, setFi] = useState(0);
   const [cur, setCur] = useState(-1);
   const [playing, setPlaying] = useState(false);
   const [pr, setPr] = useState({ t: 0, d: 0 });
@@ -367,6 +379,14 @@ export default function Home() {
     return () => clearInterval(id);
   }, [profiles.length]);
 
+  // Diaporama en fondu des photos d'artistes
+  useEffect(() => {
+    const n = profiles.filter((p) => p.avatar_url).length;
+    if (n < 2) return;
+    const id = setInterval(() => setFi((s) => s + 1), 4000);
+    return () => clearInterval(id);
+  }, [profiles]);
+
   function go(k) {
     if (k !== "radio") setActiveSt(null);
     setTab(k); setMsg(""); if (typeof window !== "undefined") window.scrollTo(0, 0);
@@ -462,6 +482,8 @@ export default function Home() {
   const tvs = stations.filter((s) => s.kind === "tv");
   const gal = [...tracks.filter((x) => x.cover_url).map((x) => x.cover_url), ...profiles.filter((p) => p.avatar_url).map((p) => p.avatar_url)].slice(0, 12);
   const fp = profiles.length ? profiles[slide % profiles.length] : null;
+  const fadeList = profiles.filter((p) => p.avatar_url);
+  const fIdx = fadeList.length ? fi % fadeList.length : 0;
   const curT = cur >= 0 ? tracks[cur] : null;
   const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
   const rNow = rList[rInfo.i] || null;
@@ -564,6 +586,36 @@ export default function Home() {
             <button className="qc" key={k} onClick={() => go(k)}><Icon n={ic} s={34} /><span><b>{n}</b><small>{s}</small></span></button>
           ))}
         </div>
+
+        {fadeList.length > 0 && (
+          <section className="panel">
+            <h3 className="ptitle">{t.showcase}</h3>
+            <p className="sub" style={{ marginTop: 6, marginBottom: 0 }}>{t.showcaseSub}</p>
+            <div className="fade">
+              {fadeList.map((p, i) => (
+                <div
+                  key={p.id}
+                  className={"fs" + (i === fIdx ? " on" : "")}
+                  style={{ backgroundImage: "linear-gradient(0deg,#000c,#0000 55%),url(" + p.avatar_url + ")" }}
+                >
+                  <div className="fcap">
+                    <span className="tag">{t.featured}</span>
+                    <h3>{p.username}</h3>
+                    <small>{count(p.id)} {t.tracksN}</small>
+                    <button className="outl small" onClick={() => openArtist(p.id)}>{t.seeProfile} →</button>
+                  </div>
+                </div>
+              ))}
+              {fadeList.length > 1 && (
+                <div className="fdots">
+                  {fadeList.map((p, i) => (
+                    <button key={p.id} className={i === fIdx ? "on" : ""} onClick={() => setFi(i)} aria-label={p.username} />
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         <div className="cols">
           <section className="panel">
