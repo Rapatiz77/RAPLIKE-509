@@ -83,17 +83,69 @@ function ago(d, lang) {
   } catch (e) { return ""; }
 }
 
-// Radio virtuelle : calcule quel titre passe maintenant, d'après l'heure
+// Radio virtuelle en ordre aléatoire : le mélange change à chaque cycle de la playlist,
+// mais il est le même pour tous les auditeurs (il dépend seulement de l'heure).
+function seeded(seed) {
+  let a = seed | 0;
+  return function () {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+function shuffled(n, cycle) {
+  const a = Array.from({ length: n }, (_, i) => i);
+  if (n <= 2) return a;
+  const r = seeded(cycle * 2654435761 + 12345);
+  for (let i = n - 1; i > 0; i--) {
+    const j = Math.floor(r() * (i + 1));
+    const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+// Ordre d'un cycle : évite que le même titre passe deux fois de suite à la jonction
+function orderFor(n, cycle) {
+  const a = shuffled(n, cycle);
+  if (n > 2 && cycle > 0) {
+    const prevLast = shuffled(n, cycle - 1)[n - 1];
+    if (a[0] === prevLast) { const tmp = a[0]; a[0] = a[1]; a[1] = tmp; }
+  }
+  return a;
+}
+// Le jingle (ligne avec is_jingle = true) passe après chaque groupe de 3 musiques.
 function radioNow(list) {
-  const total = list.reduce((s, x) => s + (x.duration_seconds || 0), 0);
-  if (!list.length || total <= 0) return null;
-  let p = (Date.now() / 1000) % total;
-  for (let i = 0; i < list.length; i++) {
-    const d = list[i].duration_seconds || 0;
-    if (p < d) return { i, off: p };
+  const dur = (i) => list[i].duration_seconds || 0;
+  const jIdx = list.findIndex((x) => x.is_jingle);
+  const songs = list.map((_, i) => i).filter((i) => !list[i].is_jingle);
+  const songsTotal = songs.reduce((s, i) => s + dur(i), 0);
+  if (!songs.length || songsTotal <= 0) return null;
+  const withJ = jIdx >= 0 && dur(jIdx) > 0;
+  const nJ = withJ ? Math.floor(songs.length / 3) : 0;
+  const total = songsTotal + (withJ ? nJ * dur(jIdx) : 0);
+  const nowSec = Date.now() / 1000;
+  const cycle = Math.floor(nowSec / total);
+  let p = nowSec % total;
+  const build = (c) => {
+    const o = orderFor(songs.length, c).map((k) => songs[k]);
+    if (!withJ) return o;
+    const seq = [];
+    o.forEach((s, k) => {
+      seq.push(s);
+      if ((k + 1) % 3 === 0) seq.push(jIdx);
+    });
+    return seq;
+  };
+  const seq = build(cycle);
+  for (let k = 0; k < seq.length; k++) {
+    const d = dur(seq[k]);
+    if (p < d) {
+      const next = k + 1 < seq.length ? seq[k + 1] : build(cycle + 1)[0];
+      return { i: seq[k], off: p, next };
+    }
     p -= d;
   }
-  return { i: 0, off: 0 };
+  return { i: seq[0], off: 0, next: seq[1 % seq.length] };
 }
 
 const css = `
@@ -318,7 +370,7 @@ export default function Home() {
   }
   async function loadRadio() {
     const { data } = await supabase.from("radio_playlist")
-      .select("position,title,artist,audio_url,duration_seconds")
+      .select("*")
       .order("position", { ascending: true });
     setRList(data || []);
   }
@@ -510,7 +562,7 @@ export default function Home() {
   const curT = cur >= 0 ? tracks[cur] : null;
   const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
   const rNow = rList[rInfo.i] || null;
-  const rNext = rList.length ? rList[(rInfo.i + 1) % rList.length] : null;
+  const rNext = rList.length ? rList[rInfo.next ?? ((rInfo.i + 1) % rList.length)] : null;
 
   function renderRow(x, i) {
     const idx = tracks.indexOf(x);
