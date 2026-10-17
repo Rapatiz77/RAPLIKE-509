@@ -11,7 +11,7 @@ const supabase = createClient(
 const HERO_IMG = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères." },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères.", unread: "titre(s) illisible(s) ignoré(s)" },
   en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters." },
   ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute" },
   es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar" },
@@ -114,20 +114,36 @@ function orderFor(n, cycle) {
   return a;
 }
 // Le jingle (ligne avec is_jingle = true) passe après chaque groupe de 3 musiques.
-function radioNow(list) {
+function radioNow(list, bad = []) {
   const dur = (i) => list[i].duration_seconds || 0;
   const jIdx = list.findIndex((x) => x.is_jingle);
-  const songs = list.map((_, i) => i).filter((i) => !list[i].is_jingle);
+  const songs = list.map((_, i) => i).filter((i) => !list[i].is_jingle && !bad.includes(i));
   const songsTotal = songs.reduce((s, i) => s + dur(i), 0);
   if (!songs.length || songsTotal <= 0) return null;
-  const withJ = jIdx >= 0 && dur(jIdx) > 0;
+  const withJ = jIdx >= 0 && !bad.includes(jIdx) && dur(jIdx) > 0;
   const nJ = withJ ? Math.floor(songs.length / 3) : 0;
   const total = songsTotal + (withJ ? nJ * dur(jIdx) : 0);
   const nowSec = Date.now() / 1000;
   const cycle = Math.floor(nowSec / total);
   let p = nowSec % total;
+  // Sépare les titres d'un même artiste pour qu'ils ne se suivent pas
+  const art = (i) => (list[i].artist || "").trim().toLowerCase();
+  const spread = (o) => {
+    const a = o.slice();
+    for (let k = 1; k < a.length; k++) {
+      if (art(a[k]) && art(a[k]) === art(a[k - 1])) {
+        for (let j = k + 1; j < a.length; j++) {
+          if (art(a[j]) !== art(a[k - 1])) {
+            const tmp = a[k]; a[k] = a[j]; a[j] = tmp;
+            break;
+          }
+        }
+      }
+    }
+    return a;
+  };
   const build = (c) => {
-    const o = orderFor(songs.length, c).map((k) => songs[k]);
+    const o = spread(orderFor(songs.length, c).map((k) => songs[k]));
     if (!withJ) return o;
     const seq = [];
     o.forEach((s, k) => {
@@ -334,6 +350,7 @@ export default function Home() {
   const [rOn, setROn] = useState(false);
   const [rInfo, setRInfo] = useState({ i: 0, off: 0 });
   const [activeSt, setActiveSt] = useState(null);
+  const [bad, setBad] = useState([]);
   const aRef = useRef(null);
   const rRef = useRef(null);
   const rIdx = useRef(-1);
@@ -377,7 +394,7 @@ export default function Home() {
 
   // Radio virtuelle : synchronise le lecteur avec l'heure
   function syncRadio() {
-    const n = radioNow(rList);
+    const n = radioNow(rList, bad);
     const a = rRef.current;
     if (!n || !a) return;
     setRInfo(n);
@@ -429,7 +446,7 @@ export default function Home() {
     if (!rOn) return;
     const id = setInterval(syncRadio, 1000);
     return () => clearInterval(id);
-  }, [rOn, rList]);
+  }, [rOn, rList, bad]);
 
   useEffect(() => {
     if (!user) { setProfile(undefined); return; }
@@ -619,6 +636,12 @@ export default function Home() {
         onTimeUpdate={(e) => setPr({ t: e.target.currentTime, d: e.target.duration || 0 })}
         onEnded={() => step(1)} />
       <audio ref={rRef} preload="auto"
+        onError={() => {
+          const i = rIdx.current;
+          if (i < 0) return;
+          rIdx.current = -1;
+          setBad((b) => (b.includes(i) ? b : [...b, i]));
+        }}
         onLoadedMetadata={(e) => {
           const o = parseFloat(e.target.dataset.off || "0");
           if (o > 0 && o < (e.target.duration || 0)) e.target.currentTime = o;
@@ -825,6 +848,7 @@ export default function Home() {
               {rNext && <p className="sub" style={{ margin: "8px 0 0" }}>{t.nextP} : {rNext.title}</p>}
             </>)}
           </>)}
+          {bad.length > 0 && <p className="sub" style={{ margin: "10px 0 0" }}>{bad.length} {t.unread}</p>}
         </div>
 
         {radios.length === 0 && <p className="sub">{t.nostat}</p>}
