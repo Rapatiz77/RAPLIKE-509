@@ -11,10 +11,10 @@ const supabase = createClient(
 const HERO_IMG = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères.", unread: "titre(s) illisible(s) ignoré(s)", aboutTitle: "À propos de RAPLIKE 509", owner: "Propriétaire du site et de l'application", aboutP1: "RAPLIKE 509 est la plateforme de la musique haïtienne et du rap haïtien (rap kreyòl). Écoute les titres des artistes haïtiens et de la diaspora, regarde leurs clips, découvre leurs profils et partage ta musique.", aboutP2: "Sur RAPLIKE 509, tu retrouves aussi RAPLIKE 509 Radio, des stations de radio en direct et des chaînes de télévision haïtiennes. Crée ton compte gratuitement pour publier tes titres, liker et commenter." },
-  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment." },
-  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo." },
-  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar." },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères.", unread: "titre(s) illisible(s) ignoré(s)", aboutTitle: "À propos de RAPLIKE 509", owner: "Propriétaire du site et de l'application", notif: "Notifications", notifNone: "Aucune notification.", nTrack: "Nouveau titre", nLike: "a aimé ton titre", nComment: "Nouveau commentaire", nArtist: "Nouvel artiste", nAnn: "ANNONCE", aboutP1: "RAPLIKE 509 est la plateforme de la musique haïtienne et du rap haïtien (rap kreyòl). Écoute les titres des artistes haïtiens et de la diaspora, regarde leurs clips, découvre leurs profils et partage ta musique.", aboutP2: "Sur RAPLIKE 509, tu retrouves aussi RAPLIKE 509 Radio, des stations de radio en direct et des chaînes de télévision haïtiennes. Crée ton compte gratuitement pour publier tes titres, liker et commenter." },
+  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", notif: "Notifications", notifNone: "No notifications.", nTrack: "New track", nLike: "liked your track", nComment: "New comment", nArtist: "New artist", nAnn: "NEWS", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment." },
+  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", notif: "Notifikasyon", notifNone: "Pa gen notifikasyon.", nTrack: "Nouvo mizik", nLike: "renmen mizik ou", nComment: "Nouvo kòmantè", nArtist: "Nouvo atis", nAnn: "ANONS", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo." },
+  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", notif: "Notificaciones", notifNone: "Sin notificaciones.", nTrack: "Nuevo tema", nLike: "dio me gusta a tu tema", nComment: "Nuevo comentario", nArtist: "Nuevo artista", nAnn: "ANUNCIO", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar." },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#1f5cff,#07070c", "#e8262f,#07070c", "#1f5cff,#e8262f"];
@@ -39,6 +39,7 @@ const P = {
   tv: "M4 7h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V9a2 2 0 012-2zM17 2l-5 5-5-5",
   user: "M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z",
   plus: "M12 5v14M5 12h14",
+  bell: "M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0",
   heart: "M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 00-7.8 7.8l1 1.1L12 21.2l7.8-7.7 1-1.1a5.5 5.5 0 000-7.8z",
   chat: "M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z",
   play: "M7 4l13 8-13 8z",
@@ -177,6 +178,14 @@ button{font-family:inherit;cursor:pointer}
 .foot a,.legal a{color:#ef2b3a;text-decoration:none}
 .foot b{color:#fff;letter-spacing:1px}
 .owner{margin-bottom:8px;color:#c9c9dc}
+.bellb{position:relative;width:44px;height:44px;border-radius:12px;border:2px solid #e11129;background:#7a0a1844;color:#fff;display:flex;align-items:center;justify-content:center;padding:0;flex:0 0 44px}
+.bdot{position:absolute;top:-8px;right:-8px;min-width:20px;height:20px;border-radius:10px;background:#e11129;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;padding:0 5px}
+.bellp{position:fixed;top:74px;left:12px;right:12px;margin:0 auto;max-width:440px;max-height:65vh;overflow-y:auto;background:#0c0c14;border:1px solid #e1112988;border-radius:16px;padding:12px;z-index:90;box-shadow:0 10px 40px #000c}
+.nit{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #ffffff12;color:#fff;padding:10px 6px;border-radius:8px}
+.nit.un{background:#e1112916}
+.nit b{display:block;font-size:14px}
+.nit small{display:block;color:#9a9ab3;font-size:12px;margin-top:2px}
+.nit i{font-style:normal;background:#e11129;font-size:10px;padding:2px 6px;border-radius:5px;margin-right:6px;font-weight:800}
 .legal{text-align:center;color:#9a9ab3;font-size:12px;margin:14px 0 0}
 .logoimg{height:48px;width:auto;display:block;cursor:pointer}
 .links{display:none}
@@ -354,6 +363,10 @@ export default function Home() {
   const [rInfo, setRInfo] = useState({ i: 0, off: 0 });
   const [activeSt, setActiveSt] = useState(null);
   const [bad, setBad] = useState([]);
+  const [notifs, setNotifs] = useState([]);
+  const [anns, setAnns] = useState([]);
+  const [bellOpen, setBellOpen] = useState(false);
+  const [annSeen, setAnnSeen] = useState(0);
   const aRef = useRef(null);
   const rRef = useRef(null);
   const rIdx = useRef(-1);
@@ -393,6 +406,34 @@ export default function Home() {
       .select("*")
       .order("position", { ascending: true });
     setRList(data || []);
+  }
+  async function loadNotifs() {
+    const { data } = await supabase.from("notifications")
+      .select("id,kind,title,body,track_id,is_read,created_at")
+      .order("created_at", { ascending: false })
+      .limit(30);
+    setNotifs(data || []);
+  }
+  async function loadAnns() {
+    const { data } = await supabase.from("announcements")
+      .select("id,title,body,created_at")
+      .order("created_at", { ascending: false })
+      .limit(10);
+    setAnns(data || []);
+  }
+  async function markRead() {
+    if (!user) return;
+    const now = Date.now();
+    try { localStorage.setItem("annSeen", String(now)); } catch (e) {}
+    setAnnSeen(now);
+    if (notifs.some((n) => !n.is_read)) {
+      setNotifs((l) => l.map((n) => ({ ...n, is_read: true })));
+      await supabase.from("notifications").update({ is_read: true }).eq("user_id", user.id).eq("is_read", false);
+    }
+  }
+  function toggleBell() {
+    if (bellOpen) { markRead(); setBellOpen(false); }
+    else { loadNotifs(); loadAnns(); setBellOpen(true); }
   }
 
   // Radio virtuelle : synchronise le lecteur avec l'heure
@@ -439,9 +480,15 @@ export default function Home() {
 
   useEffect(() => {
     try { const l = localStorage.getItem("lang"); if (l && T[l]) setLang(l); } catch (e) {}
+    let seen = Date.now();
+    try {
+      const v = parseInt(localStorage.getItem("annSeen") || "", 10);
+      if (v) seen = v; else localStorage.setItem("annSeen", String(seen));
+    } catch (e) {}
+    setAnnSeen(seen);
     supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
     const { data: s } = supabase.auth.onAuthStateChange((_e, x) => setUser(x?.user ?? null));
-    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos(); loadRadio();
+    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos(); loadRadio(); loadAnns();
     return () => s.subscription.unsubscribe();
   }, []);
 
@@ -459,6 +506,14 @@ export default function Home() {
 
   useEffect(() => { if (user && tab === "login") setTab("home"); }, [user, tab]);
 
+  // Notifications : chargement et rafraîchissement toutes les 60 secondes
+  useEffect(() => {
+    if (!user) { setNotifs([]); setBellOpen(false); return; }
+    loadNotifs();
+    const id = setInterval(() => { loadNotifs(); loadAnns(); }, 60000);
+    return () => clearInterval(id);
+  }, [user]);
+
   useEffect(() => {
     if (profiles.length < 2) return;
     const id = setInterval(() => setSlide((s) => (s + 1) % profiles.length), 5000);
@@ -474,6 +529,7 @@ export default function Home() {
   }, [profiles]);
 
   function go(k) {
+    if (bellOpen) { markRead(); setBellOpen(false); }
     if (k !== "radio") setActiveSt(null);
     setTab(k); setMsg(""); if (typeof window !== "undefined") window.scrollTo(0, 0);
   }
@@ -583,6 +639,11 @@ export default function Home() {
   const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
   const rNow = rList[rInfo.i] || null;
   const rNext = rList.length ? rList[rInfo.next ?? ((rInfo.i + 1) % rList.length)] : null;
+  const nItems = [
+    ...anns.map((a) => ({ k: "ann", id: "a" + a.id, title: a.title, body: a.body, at: a.created_at, un: new Date(a.created_at).getTime() > annSeen })),
+    ...notifs.map((n) => ({ k: n.kind, id: n.id, title: n.title, body: n.body, at: n.created_at, un: !n.is_read })),
+  ].sort((x, y) => new Date(y.at) - new Date(x.at)).slice(0, 30);
+  const unread = user ? nItems.filter((x) => x.un).length : 0;
 
   function renderRow(x, i) {
     const idx = tracks.indexOf(x);
@@ -663,9 +724,38 @@ export default function Home() {
         </nav>
         <div className="right">
           <button className="pubb" onClick={() => go("pub")}>+ {t.pub}</button>
+          {user && (
+            <button className="bellb" onClick={toggleBell} aria-label={t.notif}>
+              <Icon n="bell" s={20} />
+              {unread > 0 && <span className="bdot">{unread > 9 ? "9+" : unread}</span>}
+            </button>
+          )}
           <button className="loginb" onClick={() => go(user ? "me" : "login")}>{user ? (profile?.username || t.me) : t.loginTop}</button>
         </div>
       </header>
+
+      {user && bellOpen && (
+        <div className="bellp">
+          <h3 className="ptitle" style={{ marginBottom: 8 }}>{t.notif}</h3>
+          {nItems.length === 0 && <p className="sub">{t.notifNone}</p>}
+          {nItems.map((x) => {
+            const main = x.k === "like" ? (x.body || "") + " " + t.nLike
+              : x.k === "comment" ? t.nComment + " : " + (x.title || "")
+              : x.k === "track" ? t.nTrack + " : " + (x.title || "")
+              : x.k === "artist" ? t.nArtist + " : " + (x.title || "")
+              : x.title;
+            const sub = x.k === "like" ? x.title : x.k === "artist" ? "" : x.body;
+            const dest = x.k === "artist" ? "artists" : x.k === "ann" ? null : "music";
+            return (
+              <button className={"nit" + (x.un ? " un" : "")} key={x.id} onClick={() => dest && go(dest)}>
+                <b>{x.k === "ann" && <i>{t.nAnn}</i>}{main}</b>
+                {sub ? <small>{sub}</small> : null}
+                <small>{ago(x.at, lang)}</small>
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {showLogin && (
         <div className="form">
