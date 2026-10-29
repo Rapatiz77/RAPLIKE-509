@@ -9,12 +9,24 @@ const supabase = createClient(
 );
 
 const HERO_IMG = "";
+// Lien pour contacter l'équipe et activer le premium (ex : "https://wa.me/509XXXXXXXX"). Laisse vide pour masquer le bouton.
+const PREMIUM_LINK = "";
 
 const T = {
-  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères.", unread: "titre(s) illisible(s) ignoré(s)", aboutTitle: "À propos de RAPLIKE 509", owner: "Propriétaire du site et de l'application", notif: "Notifications", notifNone: "Aucune notification.", nTrack: "Nouveau titre", nLike: "a aimé ton titre", nComment: "Nouveau commentaire", nArtist: "Nouvel artiste", nAnn: "ANNONCE", aboutP1: "RAPLIKE 509 est la plateforme de la musique haïtienne et du rap haïtien (rap kreyòl). Écoute les titres des artistes haïtiens et de la diaspora, regarde leurs clips, découvre leurs profils et partage ta musique.", aboutP2: "Sur RAPLIKE 509, tu retrouves aussi RAPLIKE 509 Radio, des stations de radio en direct et des chaînes de télévision haïtiennes. Crée ton compte gratuitement pour publier tes titres, liker et commenter." },
-  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", notif: "Notifications", notifNone: "No notifications.", nTrack: "New track", nLike: "liked your track", nComment: "New comment", nArtist: "New artist", nAnn: "NEWS", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment." },
-  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", notif: "Notifikasyon", notifNone: "Pa gen notifikasyon.", nTrack: "Nouvo mizik", nLike: "renmen mizik ou", nComment: "Nouvo kòmantè", nArtist: "Nouvo atis", nAnn: "ANONS", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo." },
-  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", notif: "Notificaciones", notifNone: "Sin notificaciones.", nTrack: "Nuevo tema", nLike: "dio me gusta a tu tema", nComment: "Nuevo comentario", nArtist: "Nuevo artista", nAnn: "ANUNCIO", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar." },
+  fr: { tag: "La musique haïtienne, le rap haïtien.", email: "E-mail", pass: "Mot de passe", loginBtn: "Se connecter", signup: "Créer un compte", name: "Choisis ton nom d'artiste", save: "Enregistrer", home: "Accueil", artists: "Artistes", music: "Musique", videos: "Vidéos", radio: "Radio", tv: "TV", me: "Profil", pub: "Publier", loginTop: "LOGIN", hero: "La plateforme des artistes haïtiens et de la diaspora", slogan: "ÉCOUTE · REGARDE · PARTAGE · SOUTIENS", radioSub: "Écoute en direct", tvSub: "Chaînes & Émissions", musSub: "Écoute les titres", vidSub: "Regarde & Partage", artistsSub: "Découvre les artistes du moment", seeArtists: "Voir tous les artistes", featured: "ARTISTE À LA UNE", seeProfile: "Voir le profil", posts: "Derniers posts", seePosts: "Voir plus de posts", gallery: "Galerie des artistes", gallerySub: "Photos, pochettes, backstage...", noPhoto: "Aucune photo pour l'instant.", showcase: "Les artistes en vedette", showcaseSub: "Les visages de RAPLIKE 509", soon: "Bientôt disponible", tracksN: "titres", back: "Retour", noBio: "Pas encore de bio.", noArtists: "Aucun artiste pour l'instant.", none: "Aucun titre pour l'instant.", title: "Titre", send: "Publier le titre", out: "Quitter", ok: "Titre publié !", need: "Ajoute un titre et un fichier audio.", wait: "Envoi en cours...", lang: "Langue", bio: "Ta bio", photo: "Photo de profil", cover: "Pochette (optionnelle)", saved: "Profil enregistré !", search: "Rechercher un artiste ou un titre...", write: "Écrire un commentaire...", post: "Envoyer", nocom: "Aucun commentaire", nostat: "Aucune station pour l'instant.", live: "EN DIRECT", novid: "Aucune vidéo pour l'instant.", listen: "Écouter la radio", stopR: "Arrêter la radio", nowP: "En ce moment", nextP: "Ensuite", noRadio: "La playlist de la radio est vide pour l'instant.", tune: "Touche pour écouter", bad: "Fichier refusé : audio 30 Mo max, image 5 Mo max (JPG, PNG ou WebP).", weak: "Mot de passe trop court : 8 caractères minimum.", badName: "Le nom doit avoir entre 2 et 30 caractères.", unread: "titre(s) illisible(s) ignoré(s)", aboutTitle: "À propos de RAPLIKE 509", owner: "Propriétaire du site et de l'application", notif: "Notifications", notifNone: "Aucune notification.", nTrack: "Nouveau titre", nLike: "a aimé ton titre", nComment: "Nouveau commentaire", nArtist: "Nouvel artiste", nAnn: "ANNONCE", aboutP1: "RAPLIKE 509 est la plateforme de la musique haïtienne et du rap haïtien (rap kreyòl). Écoute les titres des artistes haïtiens et de la diaspora, regarde leurs clips, découvre leurs profils et partage ta musique.", aboutP2: "Sur RAPLIKE 509, tu retrouves aussi RAPLIKE 509 Radio, des stations de radio en direct et des chaînes de télévision haïtiennes. Crée ton compte gratuitement pour publier tes titres, liker et commenter.",
+    prem: "Premium", premGo: "Devenir premium", premTitle: "RAPLIKE 509 Premium", premSub: "Plus de visibilité pour ta musique.", premB1: "Ta musique en rotation sur RAPLIKE 509 Radio, 24h/24", premB2: "Tes vidéos YouTube sur le site", premB3: "Une bannière pour promouvoir tes événements", premB4: "Une page Activités qui montre ce que tu fais", premB5: "Badge premium et mise en avant « À la une »", premPay: "Le paiement par carte arrive bientôt. Contacte-nous pour activer ton compte premium.", premContact: "Nous contacter", premYou: "Tu es premium ★", premPromo: "Ta musique sur la radio, tes vidéos et tes événements mis en avant.",
+    activities: "Activités", events: "Événements à venir", noEvents: "Aucun événement pour l'instant.", seeAct: "Voir les activités", more: "Plus d'infos", del: "Supprimer", premSpace: "Espace premium", askRadio: "Demander la radio", rPending: "En attente de validation", rOk: "À l'antenne", rNo: "Refusé", rSent: "Demande envoyée !", rLen: "Le titre doit durer entre 30 secondes et 15 minutes.", rTitle: "Mes titres pour la radio", noTracks: "Aucun titre.",
+    addVideo: "Ajouter une vidéo", vTitle: "Titre de la vidéo", vLink: "Lien YouTube", vBad: "Un titre et un lien YouTube valide sont requis.", vOk: "Vidéo ajoutée !", myVideos: "Mes vidéos",
+    addEvent: "Ajouter un événement", evTitle: "Nom de l'événement", evPlace: "Lieu", evDate: "Date et heure", evLink: "Lien https:// (optionnel)", evDesc: "Description (optionnelle)", evBad: "Un nom, une date valide et un lien en https:// (ou vide) sont requis.", evOk: "Événement ajouté !", myEvents: "Mes événements", premVideos: "Vidéos des artistes premium", premTracks: "Titres des artistes premium" },
+  en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", notif: "Notifications", notifNone: "No notifications.", nTrack: "New track", nLike: "liked your track", nComment: "New comment", nArtist: "New artist", nAnn: "NEWS", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment.",
+    prem: "Premium", premGo: "Go premium", premTitle: "RAPLIKE 509 Premium", premSub: "More visibility for your music.", premB1: "Your music in rotation on RAPLIKE 509 Radio, 24/7", premB2: "Your YouTube videos on the site", premB3: "A banner to promote your events", premB4: "An Activities page showing what you are up to", premB5: "Premium badge and “Featured artist” spotlight", premPay: "Card payment is coming soon. Contact us to activate your premium account.", premContact: "Contact us", premYou: "You are premium ★", premPromo: "Your music on the radio, your videos and your events in the spotlight.",
+    activities: "Activities", events: "Upcoming events", noEvents: "No events yet.", seeAct: "See activities", more: "More info", del: "Delete", premSpace: "Premium space", askRadio: "Request radio", rPending: "Waiting for approval", rOk: "On air", rNo: "Declined", rSent: "Request sent!", rLen: "The track must last between 30 seconds and 15 minutes.", rTitle: "My tracks for the radio", noTracks: "No tracks.",
+    addVideo: "Add a video", vTitle: "Video title", vLink: "YouTube link", vBad: "A title and a valid YouTube link are required.", vOk: "Video added!", myVideos: "My videos",
+    addEvent: "Add an event", evTitle: "Event name", evPlace: "Place", evDate: "Date and time", evLink: "https:// link (optional)", evDesc: "Description (optional)", evBad: "A name, a valid date and an https:// link (or none) are required.", evOk: "Event added!", myEvents: "My events", premVideos: "Premium artists' videos", premTracks: "Premium artists' tracks" },
+  ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", notif: "Notifikasyon", notifNone: "Pa gen notifikasyon.", nTrack: "Nouvo mizik", nLike: "renmen mizik ou", nComment: "Nouvo kòmantè", nArtist: "Nouvo atis", nAnn: "ANONS", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo.",
+    prem: "Premium", premGo: "Vin premium", premTitle: "RAPLIKE 509 Premium", activities: "Aktivite", events: "Evènman k ap vini", noEvents: "Poko gen evènman.", seeAct: "Wè aktivite yo", premSpace: "Espas premium", addVideo: "Ajoute yon videyo", addEvent: "Ajoute yon evènman", del: "Efase" },
+  es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", notif: "Notificaciones", notifNone: "Sin notificaciones.", nTrack: "Nuevo tema", nLike: "dio me gusta a tu tema", nComment: "Nuevo comentario", nArtist: "Nuevo artista", nAnn: "ANUNCIO", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar.",
+    prem: "Premium", premGo: "Hazte premium", premTitle: "RAPLIKE 509 Premium", activities: "Actividades", events: "Próximos eventos", noEvents: "Aún no hay eventos.", seeAct: "Ver actividades", premSpace: "Espacio premium", addVideo: "Añadir un video", addEvent: "Añadir un evento", del: "Eliminar" },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#1f5cff,#07070c", "#e8262f,#07070c", "#1f5cff,#e8262f"];
@@ -32,6 +44,23 @@ const frameSrc = (u) => {
   const s = (u || "").replace(/^iframe:/, "");
   return /^https:\/\//i.test(s) ? s : "";
 };
+// Identifiant YouTube (11 caractères) à partir d'un lien ou d'un identifiant
+const ytId = (u) => {
+  const s = (u || "").trim();
+  if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
+  const m = s.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : "";
+};
+// Durée d'un fichier audio en secondes (lue dans le navigateur)
+function audioDuration(url) {
+  return new Promise((resolve, reject) => {
+    const a = new Audio();
+    a.preload = "metadata";
+    a.onloadedmetadata = () => resolve(Math.round(a.duration));
+    a.onerror = () => reject(new Error("audio"));
+    a.src = url;
+  });
+}
 
 const P = {
   home: "M3 10l9-7 9 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2zM9 22V12h6v10",
@@ -49,6 +78,7 @@ const P = {
   music: "M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zM21 16a3 3 0 11-6 0 3 3 0 016 0z",
   video: "M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zM10 9l5 3-5 3z",
   users: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8",
+  star: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
 };
 function Icon({ n, s = 22, fill }) {
   return (
@@ -61,6 +91,11 @@ function Avatar({ p, size }) {
   const c = size === "big" ? "avatar" : size === "md" ? "md" : "sm";
   if (p?.avatar_url && /^https:\/\//i.test(p.avatar_url)) return <img className={c} src={p.avatar_url} alt="" />;
   return <div className={c}>{(p?.username || "?")[0].toUpperCase()}</div>;
+}
+// Badge premium
+function PB({ p, full }) {
+  if (!p?.is_premium) return null;
+  return <span className="pb" title="Premium">{full ? "★ PREMIUM" : "★"}</span>;
 }
 // Égaliseur animé (barres qui bougent quand "on" est vrai)
 function Eq({ on, sm }) {
@@ -212,6 +247,7 @@ button{font-family:inherit;cursor:pointer}
 .arow small{display:block;color:#9a9ab3}
 .outl{display:block;border:2px solid #e11129;border-radius:12px;background:#0006;color:#fff;font-weight:700;padding:11px 16px;margin-top:12px}
 .outl.small{display:inline-block;margin-top:8px}
+a.outl{text-decoration:none}
 .feat{position:relative;min-height:260px;border-radius:14px;border:1px solid #e1112966;background:linear-gradient(135deg,#1f3fff55,#e1112955) center/cover;display:flex;align-items:flex-end;padding:18px}
 .ft{padding-bottom:14px;padding-left:34px}
 .ft h2{margin:6px 0;font-size:34px;font-style:italic}
@@ -307,6 +343,26 @@ audio{width:100%}
 .bot .on{color:#fff}
 .bot .on svg{color:#ef4444}
 .bot .mid span{width:54px;height:54px;border-radius:50%;margin-top:-30px;background:linear-gradient(135deg,#2f6bff,#a855f7,#ef4444);display:flex;align-items:center;justify-content:center;color:#fff}
+.pb{display:inline-flex;align-items:center;background:linear-gradient(90deg,#f5c542,#e8a317);color:#1a1200;font-size:10px;font-weight:900;letter-spacing:.5px;padding:2px 6px;border-radius:6px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.gold{border-color:#f5c54266;background:linear-gradient(135deg,#f5c54210,#e1112910)}
+.ev{display:flex;gap:12px;align-items:flex-start;border:1px solid #f5c54255;border-radius:14px;padding:12px;background:linear-gradient(135deg,#f5c54212,#e1112912);margin-top:10px}
+.evd{flex:0 0 58px;text-align:center;background:#e11129;border-radius:10px;padding:6px 0;line-height:1.1}
+.evd b{display:block;font-size:22px}
+.evd small{font-size:11px;text-transform:uppercase}
+.evi{flex:1;min-width:0}
+.evi b{display:block;font-size:16px}
+.evi small{display:block;color:#9a9ab3;margin-top:3px;font-size:13px}
+.lnk{background:none;border:0;color:#ef4444;font-size:13px;padding:0;margin-top:8px;text-decoration:underline}
+.ben{margin:10px 0 0;padding:0;list-style:none}
+.ben li{padding:9px 0 9px 28px;position:relative;border-bottom:1px solid #ffffff10;color:#e0e0ee}
+.ben li:before{content:"★";position:absolute;left:4px;color:#f5c542}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:5px 10px;border-radius:8px;background:#ffffff12;color:#c9c9dc}
+.chip.ok{background:#16a34a33;color:#86efac}
+.chip.no{background:#ef444433;color:#fca5a5}
+.mrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #ffffff12}
+.mrow b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+.sbtn{border:1px solid #e11129;background:#0006;color:#fff;border-radius:10px;padding:8px 12px;font-weight:700;font-size:13px}
+.sbtn:disabled{opacity:.5}
 @media(min-width:900px){
   .page{padding:0 24px 120px;margin:14px auto}
   .links{display:flex;gap:4px}
@@ -367,6 +423,17 @@ export default function Home() {
   const [anns, setAnns] = useState([]);
   const [bellOpen, setBellOpen] = useState(false);
   const [annSeen, setAnnSeen] = useState(0);
+  // Premium
+  const [events, setEvents] = useState([]);
+  const [reqs, setReqs] = useState([]);
+  const [pMsg, setPMsg] = useState("");
+  const [vTitle, setVTitle] = useState("");
+  const [vUrl, setVUrl] = useState("");
+  const [evTitle, setEvTitle] = useState("");
+  const [evPlace, setEvPlace] = useState("");
+  const [evDate, setEvDate] = useState("");
+  const [evLink, setEvLink] = useState("");
+  const [evDesc, setEvDesc] = useState("");
   const aRef = useRef(null);
   const rRef = useRef(null);
   const rIdx = useRef(-1);
@@ -374,12 +441,12 @@ export default function Home() {
   useEffect(() => { document.body.dataset.tab = artistId ? "artiste" : tab; }, [tab, artistId]);
   async function loadTracks() {
     const { data } = await supabase.from("tracks")
-      .select("id,title,audio_url,cover_url,artist_id,created_at,profiles!artist_id(username,avatar_url)")
+      .select("id,title,audio_url,cover_url,artist_id,created_at,profiles!artist_id(username,avatar_url,is_premium)")
       .order("created_at", { ascending: false });
     setTracks(data || []);
   }
   async function loadProfiles() {
-    const { data } = await supabase.from("profiles").select("id,username,bio,avatar_url").order("created_at", { ascending: false });
+    const { data } = await supabase.from("profiles").select("id,username,bio,avatar_url,is_premium").order("created_at", { ascending: false });
     setProfiles(data || []);
   }
   async function loadLikes() {
@@ -400,6 +467,16 @@ export default function Home() {
     const { data } = await supabase.from("videos").select("*");
     setVideos(data || []);
     if (data && data.length) setCurV((c) => c || data[0]);
+  }
+  async function loadEvents() {
+    const { data } = await supabase.from("events")
+      .select("id,user_id,title,description,place,starts_at,link")
+      .order("starts_at", { ascending: true });
+    setEvents(data || []);
+  }
+  async function loadReqs() {
+    const { data } = await supabase.from("radio_requests").select("track_id,status");
+    setReqs(data || []);
   }
   async function loadRadio() {
     const { data } = await supabase.from("radio_playlist")
@@ -488,7 +565,7 @@ export default function Home() {
     setAnnSeen(seen);
     supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
     const { data: s } = supabase.auth.onAuthStateChange((_e, x) => setUser(x?.user ?? null));
-    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos(); loadRadio(); loadAnns();
+    loadTracks(); loadProfiles(); loadLikes(); loadComments(); loadStations(); loadVideos(); loadRadio(); loadAnns(); loadEvents();
     return () => s.subscription.unsubscribe();
   }, []);
 
@@ -500,11 +577,17 @@ export default function Home() {
 
   useEffect(() => {
     if (!user) { setProfile(undefined); return; }
-    supabase.from("profiles").select("username,bio,avatar_url").eq("id", user.id).maybeSingle()
+    supabase.from("profiles").select("username,bio,avatar_url,is_premium").eq("id", user.id).maybeSingle()
       .then(({ data }) => { setProfile(data); setBio(data?.bio || ""); });
   }, [user]);
 
   useEffect(() => { if (user && tab === "login") setTab("home"); }, [user, tab]);
+
+  // Demandes de rotation radio de l'utilisateur
+  useEffect(() => {
+    if (!user) { setReqs([]); return; }
+    loadReqs();
+  }, [user]);
 
   // Notifications : chargement et rafraîchissement toutes les 60 secondes
   useEffect(() => {
@@ -514,11 +597,13 @@ export default function Home() {
     return () => clearInterval(id);
   }, [user]);
 
+  // Artiste à la une : les artistes premium d'abord
   useEffect(() => {
-    if (profiles.length < 2) return;
-    const id = setInterval(() => setSlide((s) => (s + 1) % profiles.length), 5000);
+    const n = profiles.filter((p) => p.is_premium).length || profiles.length;
+    if (n < 2) return;
+    const id = setInterval(() => setSlide((s) => (s + 1) % n), 5000);
     return () => clearInterval(id);
-  }, [profiles.length]);
+  }, [profiles]);
 
   // Diaporama en fondu des photos d'artistes
   useEffect(() => {
@@ -531,6 +616,8 @@ export default function Home() {
   function go(k) {
     if (bellOpen) { markRead(); setBellOpen(false); }
     if (k !== "radio") setActiveSt(null);
+    if (k === "activities") loadEvents();
+    setPMsg("");
     setTab(k); setMsg(""); if (typeof window !== "undefined") window.scrollTo(0, 0);
   }
   function openArtist(id) { setArtistId(id); go("artist"); }
@@ -583,6 +670,56 @@ export default function Home() {
     setBusy(false);
   }
 
+  // ---- Espace premium : vidéos, événements, demande de radio ----
+  async function addVideo() {
+    const id = ytId(vUrl);
+    const ttl = vTitle.trim().slice(0, 120);
+    if (!id || ttl.length < 2) { setPMsg(t.vBad); return; }
+    setBusy(true); setPMsg(t.wait);
+    const { error } = await supabase.from("videos").insert({ title: ttl, artist: profile?.username || "", youtube_id: id, user_id: user.id });
+    if (error) setPMsg(error.message);
+    else { setVTitle(""); setVUrl(""); setPMsg(t.vOk); await loadVideos(); }
+    setBusy(false);
+  }
+  async function deleteVideo(v) {
+    await supabase.from("videos").delete().eq("youtube_id", v.youtube_id).eq("user_id", user.id);
+    if (curV && curV.youtube_id === v.youtube_id) setCurV(null);
+    await loadVideos();
+  }
+  async function addEvent() {
+    const ttl = evTitle.trim().slice(0, 120);
+    const d = new Date(evDate);
+    const link = evLink.trim();
+    if (ttl.length < 2 || !evDate || isNaN(d.getTime()) || (link && !/^https:\/\//i.test(link))) { setPMsg(t.evBad); return; }
+    setBusy(true); setPMsg(t.wait);
+    const { error } = await supabase.from("events").insert({
+      user_id: user.id,
+      title: ttl,
+      description: evDesc.trim().slice(0, 500) || null,
+      place: evPlace.trim().slice(0, 120) || null,
+      starts_at: d.toISOString(),
+      link: link || null,
+    });
+    if (error) setPMsg(error.message);
+    else { setEvTitle(""); setEvPlace(""); setEvDate(""); setEvLink(""); setEvDesc(""); setPMsg(t.evOk); await loadEvents(); }
+    setBusy(false);
+  }
+  async function deleteEvent(id) {
+    await supabase.from("events").delete().eq("id", id).eq("user_id", user.id);
+    await loadEvents();
+  }
+  async function requestRadio(x) {
+    setBusy(true); setPMsg(t.wait);
+    try {
+      const d = await audioDuration(x.audio_url);
+      if (!d || d < 30 || d > 900) throw new Error(t.rLen);
+      const { error } = await supabase.from("radio_requests").insert({ user_id: user.id, track_id: x.id, duration_seconds: d });
+      if (error) throw error;
+      setPMsg(t.rSent); await loadReqs();
+    } catch (e) { setPMsg(e.message || String(e)); }
+    setBusy(false);
+  }
+
   const likeCount = (id) => likes.filter((l) => l.track_id === id).length;
   const isLiked = (id) => likes.some((l) => l.track_id === id && l.user_id === user?.id);
   async function toggleLike(id) {
@@ -632,8 +769,13 @@ export default function Home() {
   const radios = stations.filter((s) => s.kind === "radio");
   const tvs = stations.filter((s) => s.kind === "tv");
   const gal = [...tracks.filter((x) => x.cover_url).map((x) => x.cover_url), ...profiles.filter((p) => p.avatar_url).map((p) => p.avatar_url)].slice(0, 12);
-  const fp = profiles.length ? profiles[slide % profiles.length] : null;
-  const fadeList = profiles.filter((p) => p.avatar_url);
+  // Les artistes premium passent en premier
+  const prems = profiles.filter((p) => p.is_premium);
+  const sortedProfiles = [...prems, ...profiles.filter((p) => !p.is_premium)];
+  const featList = prems.length ? prems : profiles;
+  const fp = featList.length ? featList[slide % featList.length] : null;
+  const withPhoto = profiles.filter((p) => p.avatar_url);
+  const fadeList = [...withPhoto.filter((p) => p.is_premium), ...withPhoto.filter((p) => !p.is_premium)];
   const fIdx = fadeList.length ? fi % fadeList.length : 0;
   const curT = cur >= 0 ? tracks[cur] : null;
   const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
@@ -644,6 +786,11 @@ export default function Home() {
     ...notifs.map((n) => ({ k: n.kind, id: n.id, title: n.title, body: n.body, at: n.created_at, un: !n.is_read })),
   ].sort((x, y) => new Date(y.at) - new Date(x.at)).slice(0, 30);
   const unread = user ? nItems.filter((x) => x.un).length : 0;
+  const isPrem = !!profile?.is_premium;
+  const upcoming = events.filter((e) => new Date(e.starts_at).getTime() > Date.now() - 6 * 3600 * 1000);
+  const premVideos = videos.filter((v) => v.user_id).slice(-6).reverse();
+  const premTracks = tracks.filter((x) => x.profiles?.is_premium).slice(0, 6);
+  const reqStatus = (id) => (reqs.find((r) => r.track_id === id) || {}).status;
 
   function renderRow(x, i) {
     const idx = tracks.indexOf(x);
@@ -653,7 +800,7 @@ export default function Home() {
       <div className="row" key={x.id}>
         <div className="rh">
           <div className="th" style={thumb(x, i)} />
-          <div className="rt"><b>{x.title}</b><small>{x.profiles?.username}</small></div>
+          <div className="rt"><b>{x.title}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small></div>
           <button className="pl" onClick={() => (isCur ? toggle() : load(idx))}><Icon n={isCur && playing ? "pause" : "play"} s={18} fill /></button>
         </div>
         <div className="act">
@@ -670,6 +817,31 @@ export default function Home() {
             </div>
           </div>
         )}
+      </div>
+    );
+  }
+
+  function renderEvent(e) {
+    const d = new Date(e.starts_at);
+    const org = profiles.find((p) => p.id === e.user_id);
+    const loc = lang === "ht" ? "fr" : (lang || "fr");
+    let day = "", mon = "", hm = "";
+    try {
+      day = d.toLocaleDateString(loc, { day: "2-digit" });
+      mon = d.toLocaleDateString(loc, { month: "short" });
+      hm = d.toLocaleTimeString(loc, { hour: "2-digit", minute: "2-digit" });
+    } catch (er) {}
+    return (
+      <div className="ev" key={e.id}>
+        <div className="evd"><b>{day}</b><small>{mon}</small></div>
+        <div className="evi">
+          <b>{e.title}</b>
+          <small>{hm}{e.place ? " · " + e.place : ""}</small>
+          {org && <small>{org.username}<PB p={org} /></small>}
+          {e.description ? <small style={{ color: "#c9c9dc" }}>{e.description}</small> : null}
+          {e.link && /^https:\/\//i.test(e.link) && <a className="outl small" href={e.link} target="_blank" rel="noopener noreferrer">{t.more} →</a>}
+          {user?.id === e.user_id && <div><button className="lnk" onClick={() => deleteEvent(e.id)}>{t.del}</button></div>}
+        </div>
       </div>
     );
   }
@@ -695,7 +867,7 @@ export default function Home() {
     </div>
   );
 
-  const links = [["home", t.home, "home"], ["artists", t.artists, "users"], ["music", t.music, "music"], ["videos", t.videos, "video"], ["radio", t.radio, "radio"], ["tv", t.tv, "tv"]];
+  const links = [["home", t.home, "home"], ["artists", t.artists, "users"], ["music", t.music, "music"], ["videos", t.videos, "video"], ["radio", t.radio, "radio"], ["tv", t.tv, "tv"], ["activities", t.activities, "star"]];
   const bot = [["home", t.home, "home"], ["artists", t.artists, "users"], ["pub", t.pub, "plus"], ["radio", t.radio, "radio"], ["me", t.me, "user"]];
 
   return (
@@ -783,6 +955,14 @@ export default function Home() {
           ))}
         </div>
 
+        {upcoming.length > 0 && (
+          <section className="panel gold">
+            <h3 className="ptitle">{t.events}</h3>
+            {upcoming.slice(0, 2).map((e) => renderEvent(e))}
+            <button className="outl" onClick={() => go("activities")}>{t.seeAct} →</button>
+          </section>
+        )}
+
         {fadeList.length > 0 && (
           <section className="panel">
             <h3 className="ptitle">{t.showcase}</h3>
@@ -796,7 +976,7 @@ export default function Home() {
                 >
                   <div className="fcap">
                     <span className="tag">{t.featured}</span>
-                    <h3>{p.username}</h3>
+                    <h3>{p.username}<PB p={p} full /></h3>
                     <small>{count(p.id)} {t.tracksN}</small>
                     <button className="outl small" onClick={() => openArtist(p.id)}>{t.seeProfile} →</button>
                   </div>
@@ -820,24 +1000,24 @@ export default function Home() {
                 <h3 className="ptitle">{t.artists}</h3>
                 <p className="sub" style={{ marginTop: 6 }}>{t.artistsSub}</p>
                 {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
-                {profiles.slice(0, 4).map((p) => (
+                {sortedProfiles.slice(0, 4).map((p) => (
                   <button className="arow" key={p.id} onClick={() => openArtist(p.id)}>
-                    <Avatar p={p} size="md" /><span><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small></span>
+                    <Avatar p={p} size="md" /><span><b>{p.username}<PB p={p} /></b><small>{count(p.id)} {t.tracksN}</small></span>
                   </button>
                 ))}
                 <button className="outl" onClick={() => go("artists")}>{t.seeArtists} →</button>
               </div>
               <div className="feat" style={fp?.avatar_url ? { backgroundImage: "linear-gradient(90deg,#000d,#0004)," + cssUrl(fp.avatar_url) } : {}}>
                 {fp && (<>
-                  <button className="arr l" onClick={() => setSlide((slide - 1 + profiles.length) % profiles.length)}>‹</button>
+                  <button className="arr l" onClick={() => setSlide((slide - 1 + featList.length) % featList.length)}>‹</button>
                   <div className="ft">
                     <span className="tag">{t.featured}</span>
-                    <h2>{fp.username}</h2>
+                    <h2>{fp.username}<PB p={fp} full /></h2>
                     <p>{(fp.bio || t.noBio).slice(0, 70)}</p>
                     <button className="outl small" onClick={() => openArtist(fp.id)}>{t.seeProfile} →</button>
                   </div>
-                  <button className="arr r" onClick={() => setSlide((slide + 1) % profiles.length)}>›</button>
-                  <div className="dots">{profiles.slice(0, 6).map((_, i) => <i key={i} className={i === slide % profiles.length ? "on" : ""} />)}</div>
+                  <button className="arr r" onClick={() => setSlide((slide + 1) % featList.length)}>›</button>
+                  <div className="dots">{featList.slice(0, 6).map((_, i) => <i key={i} className={i === slide % featList.length ? "on" : ""} />)}</div>
                 </>)}
               </div>
             </div>
@@ -849,7 +1029,7 @@ export default function Home() {
             {tracks.slice(0, 4).map((x, i) => (
               <button className="post" key={x.id} onClick={() => load(tracks.indexOf(x))}>
                 <div className="th" style={thumb(x, i)} />
-                <span className="pt"><b>{x.title}</b><small>{x.profiles?.username}</small><small>{ago(x.created_at, lang)}</small></span>
+                <span className="pt"><b>{x.title}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small><small>{ago(x.created_at, lang)}</small></span>
                 <span className="hc"><Icon n="heart" s={16} />{likeCount(x.id)}</span>
               </button>
             ))}
@@ -864,6 +1044,14 @@ export default function Home() {
           <div className="gal">{gal.map((u, i) => <i key={i} style={{ backgroundImage: cssUrl(u) }} />)}</div>
         </section>
 
+        {!isPrem && (
+          <section className="panel gold">
+            <h3 className="ptitle">★ {t.prem}</h3>
+            <p className="sub" style={{ marginTop: 8, marginBottom: 0 }}>{t.premPromo}</p>
+            <button className="outl" onClick={() => go("premium")}>{t.premGo} →</button>
+          </section>
+        )}
+
         <section className="panel about">
           <h2 className="ptitle">{t.aboutTitle}</h2>
           <p>{t.aboutP1}</p>
@@ -875,9 +1063,9 @@ export default function Home() {
         <h2 className="st2">{t.artists}</h2>
         {profiles.length === 0 && <p className="sub">{t.noArtists}</p>}
         <div className="agrid">
-          {profiles.map((p) => (
+          {sortedProfiles.map((p) => (
             <button className="acard" key={p.id} onClick={() => openArtist(p.id)}>
-              <Avatar p={p} size="big" /><b>{p.username}</b><small>{count(p.id)} {t.tracksN}</small>
+              <Avatar p={p} size="big" /><b>{p.username}<PB p={p} /></b><small>{count(p.id)} {t.tracksN}</small>
             </button>
           ))}
         </div>
@@ -891,7 +1079,7 @@ export default function Home() {
           <button className="outl small" onClick={() => go("artists")} style={{ marginTop: 16 }}>← {t.back}</button>
           <div style={{ textAlign: "center" }}>
             <Avatar p={p} size="big" />
-            <h2 className="st2" style={{ margin: "8px 0" }}>{p.username}</h2>
+            <h2 className="st2" style={{ margin: "8px 0" }}>{p.username}<PB p={p} full /></h2>
             <p className="sub">{p.bio || t.noBio}</p>
             <p className="sub">{list.length} {t.tracksN}</p>
           </div>
@@ -925,6 +1113,58 @@ export default function Home() {
           ))}
         </div>
       </>)}
+
+      {!showLogin && tab === "activities" && (<>
+        <h2 className="st2">★ {t.activities}</h2>
+        <section className="panel gold">
+          <h3 className="ptitle">{t.events}</h3>
+          {upcoming.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.noEvents}</p>}
+          {upcoming.map((e) => renderEvent(e))}
+        </section>
+        <section className="panel">
+          <h3 className="ptitle">{t.premVideos}</h3>
+          {premVideos.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.novid}</p>}
+          <div className="agrid" style={{ marginTop: 10 }}>
+            {premVideos.map((v) => (
+              <button className="acard vcard" key={v.youtube_id} onClick={() => { setCurV(v); go("videos"); }}>
+                <img src={"https://img.youtube.com/vi/" + encodeURIComponent(v.youtube_id) + "/mqdefault.jpg"} alt="" />
+                <b>{v.title}</b><small>{v.artist}</small>
+              </button>
+            ))}
+          </div>
+        </section>
+        <section className="panel">
+          <h3 className="ptitle">{t.premTracks}</h3>
+          {premTracks.length === 0 && <p className="sub" style={{ marginTop: 10 }}>{t.none}</p>}
+          <div style={{ marginTop: 10 }}>{premTracks.map((x, i) => renderRow(x, i))}</div>
+        </section>
+        {!isPrem && <button className="outl" onClick={() => go("premium")}>★ {t.premGo} →</button>}
+      </>)}
+
+      {!showLogin && tab === "premium" && (
+        <div className="form">
+          <section className="panel gold" style={{ textAlign: "center" }}>
+            <span className="pb" style={{ margin: 0 }}>★ PREMIUM</span>
+            <h2 className="st2" style={{ margin: "12px 0 4px" }}>{t.premTitle}</h2>
+            <p className="sub" style={{ marginBottom: 0 }}>{t.premSub}</p>
+          </section>
+          <ul className="ben">
+            <li>{t.premB1}</li>
+            <li>{t.premB2}</li>
+            <li>{t.premB3}</li>
+            <li>{t.premB4}</li>
+            <li>{t.premB5}</li>
+          </ul>
+          {isPrem
+            ? <p className="msg" style={{ color: "#f5c542", fontWeight: 700, marginTop: 16 }}>{t.premYou}</p>
+            : (<>
+              <p className="sub" style={{ marginTop: 16 }}>{t.premPay}</p>
+              {PREMIUM_LINK && /^https:\/\//i.test(PREMIUM_LINK) && <a className="btn" style={{ textAlign: "center", textDecoration: "none" }} href={PREMIUM_LINK} target="_blank" rel="noopener noreferrer">{t.premContact}</a>}
+            </>)}
+          {!user && <button className="btn alt" onClick={() => go("login")}>{t.loginBtn}</button>}
+          {isPrem && <button className="btn alt" onClick={() => go("me")}>{t.premSpace}</button>}
+        </div>
+      )}
 
       {!showLogin && tab === "radio" && (<>
         <h2 className="st2">{t.radio}</h2>
@@ -1007,7 +1247,7 @@ export default function Home() {
       {user && tab === "me" && (
         <div className="form">
           <Avatar p={profile} size="big" />
-          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}</h2>
+          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}<PB p={profile} full /></h2>
           <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
           <label>{t.photo}</label>
           <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
@@ -1015,6 +1255,59 @@ export default function Home() {
           <textarea maxLength={500} value={bio} onChange={(e) => setBio(e.target.value)} />
           <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
           <p className="msg">{msg}</p>
+
+          {isPrem ? (
+            <section className="panel gold" style={{ marginTop: 18 }}>
+              <h3 className="ptitle">★ {t.premSpace}</h3>
+
+              <h4 style={{ margin: "18px 0 4px" }}>{t.rTitle}</h4>
+              {tracks.filter((x) => x.artist_id === user.id).length === 0 && <p className="sub">{t.noTracks}</p>}
+              {tracks.filter((x) => x.artist_id === user.id).map((x) => {
+                const st = reqStatus(x.id);
+                return (
+                  <div className="mrow" key={x.id}>
+                    <b>{x.title}</b>
+                    {st === "pending" ? <span className="chip">{t.rPending}</span>
+                      : st === "approved" ? <span className="chip ok">{t.rOk}</span>
+                      : st === "rejected" ? <span className="chip no">{t.rNo}</span>
+                      : <button className="sbtn" onClick={() => requestRadio(x)} disabled={busy}>{t.askRadio}</button>}
+                  </div>
+                );
+              })}
+
+              <h4 style={{ margin: "22px 0 0" }}>{t.addVideo}</h4>
+              <input placeholder={t.vTitle} maxLength={120} value={vTitle} onChange={(e) => setVTitle(e.target.value)} />
+              <input placeholder={t.vLink} value={vUrl} onChange={(e) => setVUrl(e.target.value)} />
+              <button className="btn" onClick={addVideo} disabled={busy}>{t.addVideo}</button>
+              {videos.filter((v) => v.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myVideos}</h4>}
+              {videos.filter((v) => v.user_id === user.id).map((v) => (
+                <div className="mrow" key={v.youtube_id}>
+                  <b>{v.title}</b>
+                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteVideo(v)}>{t.del}</button>
+                </div>
+              ))}
+
+              <h4 style={{ margin: "22px 0 0" }}>{t.addEvent}</h4>
+              <input placeholder={t.evTitle} maxLength={120} value={evTitle} onChange={(e) => setEvTitle(e.target.value)} />
+              <input placeholder={t.evPlace} maxLength={120} value={evPlace} onChange={(e) => setEvPlace(e.target.value)} />
+              <label>{t.evDate}</label>
+              <input type="datetime-local" value={evDate} onChange={(e) => setEvDate(e.target.value)} />
+              <input placeholder={t.evLink} value={evLink} onChange={(e) => setEvLink(e.target.value)} />
+              <textarea placeholder={t.evDesc} maxLength={500} value={evDesc} onChange={(e) => setEvDesc(e.target.value)} />
+              <button className="btn" onClick={addEvent} disabled={busy}>{t.addEvent}</button>
+              {events.filter((e) => e.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myEvents}</h4>}
+              {events.filter((e) => e.user_id === user.id).map((e) => (
+                <div className="mrow" key={e.id}>
+                  <b>{e.title}</b>
+                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteEvent(e.id)}>{t.del}</button>
+                </div>
+              ))}
+              <p className="msg">{pMsg}</p>
+            </section>
+          ) : (
+            <button className="btn alt" onClick={() => go("premium")}>★ {t.premGo}</button>
+          )}
+
           <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
           <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
         </div>
