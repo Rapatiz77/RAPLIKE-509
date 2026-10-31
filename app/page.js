@@ -25,12 +25,14 @@ const T = {
     prem: "Premium", premGo: "Devenir premium", premTitle: "RAPLIKE 509 Premium", premSub: "Plus de visibilité pour ta musique.", premB1: "Ta musique en rotation sur RAPLIKE 509 Radio, 24h/24", premB2: "Tes vidéos YouTube sur le site", premB3: "Une bannière pour promouvoir tes événements", premB4: "Une page Activités qui montre ce que tu fais", premB5: "Badge premium et mise en avant « À la une »", premPay: "Le paiement par carte arrive bientôt. Contacte-nous pour activer ton compte premium.", premContact: "Nous contacter", haiti: "Je suis en Haïti", diaspora: "Je suis dans la diaspora", hStep1: "Envoie le montant par MonCash ou Natcash au numéro ci-dessous.", hStep2: "Envoie la capture du paiement et ton nom d'artiste sur WhatsApp.", hStep3: "Ton compte premium est activé après vérification.", hDur: "Mensuel = 30 jours, annuel = 1 an.", cardSoon: "Paiement par carte : bientôt disponible.", perMonth: "par mois", perYear: "par an", yearSave: "≈ 2 mois offerts", priceFrom: "À partir de", premYou: "Tu es premium ★", premPromo: "Ta musique sur la radio, tes vidéos et tes événements mis en avant.",
     activities: "Activités", events: "Événements à venir", noEvents: "Aucun événement pour l'instant.", seeAct: "Voir les activités", more: "Plus d'infos", del: "Supprimer", premSpace: "Espace premium", askRadio: "Demander la radio", rPending: "En attente de validation", rOk: "À l'antenne", rNo: "Refusé", rSent: "Demande envoyée !", rLen: "Le titre doit durer entre 30 secondes et 15 minutes.", rTitle: "Mes titres pour la radio", noTracks: "Aucun titre.",
     addVideo: "Ajouter une vidéo", vTitle: "Titre de la vidéo", vLink: "Lien YouTube", vBad: "Un titre et un lien YouTube valide sont requis.", vOk: "Vidéo ajoutée !", myVideos: "Mes vidéos",
-    addEvent: "Ajouter un événement", evTitle: "Nom de l'événement", evPlace: "Lieu", evDate: "Date et heure", evLink: "Lien https:// (optionnel)", evDesc: "Description (optionnelle)", evBad: "Un nom, une date valide et un lien en https:// (ou vide) sont requis.", evOk: "Événement ajouté !", myEvents: "Mes événements", premVideos: "Vidéos des artistes premium", premTracks: "Titres des artistes premium" },
+    addEvent: "Ajouter un événement", evTitle: "Nom de l'événement", evPlace: "Lieu", evDate: "Date et heure", evLink: "Lien https:// (optionnel)", evDesc: "Description (optionnelle)", evBad: "Un nom, une date valide et un lien en https:// (ou vide) sont requis.", evOk: "Événement ajouté !", myEvents: "Mes événements", premVideos: "Vidéos des artistes premium", premTracks: "Titres des artistes premium",
+    payCard: "Payer par carte", payWait: "Redirection vers le paiement...", payOk: "Merci ! Paiement reçu. Ton compte premium s'active dans quelques secondes.", payCancel: "Paiement annulé.", payErr: "Erreur de paiement. Réessaie." },
   en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", notif: "Notifications", notifNone: "No notifications.", nTrack: "New track", nLike: "liked your track", nComment: "New comment", nArtist: "New artist", nAnn: "NEWS", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment.",
     prem: "Premium", premGo: "Go premium", premTitle: "RAPLIKE 509 Premium", premSub: "More visibility for your music.", premB1: "Your music in rotation on RAPLIKE 509 Radio, 24/7", premB2: "Your YouTube videos on the site", premB3: "A banner to promote your events", premB4: "An Activities page showing what you are up to", premB5: "Premium badge and “Featured artist” spotlight", premPay: "Card payment is coming soon. Contact us to activate your premium account.", premContact: "Contact us", haiti: "I am in Haiti", diaspora: "I am in the diaspora", hStep1: "Send the amount by MonCash or Natcash to the number below.", hStep2: "Send the payment screenshot and your artist name on WhatsApp.", hStep3: "Your premium account is activated after verification.", hDur: "Monthly = 30 days, yearly = 1 year.", cardSoon: "Card payment: coming soon.", perMonth: "per month", perYear: "per year", yearSave: "≈ 2 months free", priceFrom: "From", premYou: "You are premium ★", premPromo: "Your music on the radio, your videos and your events in the spotlight.",
     activities: "Activities", events: "Upcoming events", noEvents: "No events yet.", seeAct: "See activities", more: "More info", del: "Delete", premSpace: "Premium space", askRadio: "Request radio", rPending: "Waiting for approval", rOk: "On air", rNo: "Declined", rSent: "Request sent!", rLen: "The track must last between 30 seconds and 15 minutes.", rTitle: "My tracks for the radio", noTracks: "No tracks.",
     addVideo: "Add a video", vTitle: "Video title", vLink: "YouTube link", vBad: "A title and a valid YouTube link are required.", vOk: "Video added!", myVideos: "My videos",
-    addEvent: "Add an event", evTitle: "Event name", evPlace: "Place", evDate: "Date and time", evLink: "https:// link (optional)", evDesc: "Description (optional)", evBad: "A name, a valid date and an https:// link (or none) are required.", evOk: "Event added!", myEvents: "My events", premVideos: "Premium artists' videos", premTracks: "Premium artists' tracks" },
+    addEvent: "Add an event", evTitle: "Event name", evPlace: "Place", evDate: "Date and time", evLink: "https:// link (optional)", evDesc: "Description (optional)", evBad: "A name, a valid date and an https:// link (or none) are required.", evOk: "Event added!", myEvents: "My events", premVideos: "Premium artists' videos", premTracks: "Premium artists' tracks",
+    payCard: "Pay by card", payWait: "Redirecting to payment...", payOk: "Thank you! Payment received. Your premium account will activate in a few seconds.", payCancel: "Payment cancelled.", payErr: "Payment error. Please try again." },
   ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", notif: "Notifikasyon", notifNone: "Pa gen notifikasyon.", nTrack: "Nouvo mizik", nLike: "renmen mizik ou", nComment: "Nouvo kòmantè", nArtist: "Nouvo atis", nAnn: "ANONS", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo.",
     prem: "Premium", perMonth: "pa mwa", perYear: "pa ane", priceFrom: "Depi", premGo: "Vin premium", premTitle: "RAPLIKE 509 Premium", activities: "Aktivite", events: "Evènman k ap vini", noEvents: "Poko gen evènman.", seeAct: "Wè aktivite yo", premSpace: "Espas premium", addVideo: "Ajoute yon videyo", addEvent: "Ajoute yon evènman", del: "Efase" },
   es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", notif: "Notificaciones", notifNone: "Sin notificaciones.", nTrack: "Nuevo tema", nLike: "dio me gusta a tu tema", nComment: "Nuevo comentario", nArtist: "Nuevo artista", nAnn: "ANUNCIO", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar.",
@@ -448,6 +450,9 @@ export default function Home() {
   const [evDate, setEvDate] = useState("");
   const [evLink, setEvLink] = useState("");
   const [evDesc, setEvDesc] = useState("");
+  // Paiement par carte (Stripe)
+  const [payMsg, setPayMsg] = useState("");
+  const [payState, setPayState] = useState("");
   const aRef = useRef(null);
   const rRef = useRef(null);
   const rIdx = useRef(-1);
@@ -603,6 +608,29 @@ export default function Home() {
     loadReqs();
   }, [user]);
 
+  // Retour de Stripe : ?premium=ok ou ?premium=annule dans l'adresse
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const q = new URLSearchParams(window.location.search).get("premium");
+    if (!q) return;
+    window.history.replaceState({}, "", window.location.pathname);
+    setPayState(q === "ok" ? "ok" : "cancel");
+    setTab("premium");
+  }, []);
+
+  // Après un paiement réussi : vérifie toutes les 3 secondes que le premium est activé
+  useEffect(() => {
+    if (payState !== "ok" || !user) return;
+    let n = 0;
+    const id = setInterval(async () => {
+      n++;
+      const { data } = await supabase.from("profiles").select("username,bio,avatar_url,is_premium").eq("id", user.id).maybeSingle();
+      if (data) setProfile(data);
+      if ((data && data.is_premium) || n >= 10) clearInterval(id);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [payState, user]);
+
   // Notifications : chargement et rafraîchissement toutes les 60 secondes
   useEffect(() => {
     if (!user) { setNotifs([]); setBellOpen(false); return; }
@@ -681,6 +709,31 @@ export default function Home() {
       if (ins.error) throw ins.error;
       setMsg(t.ok); setTitle(""); setFile(null); setCoverFile(null); await loadTracks(); go("music");
     } catch (e) { setMsg(e.message); }
+    setBusy(false);
+  }
+
+  // ---- Paiement par carte (Stripe) ----
+  async function payCard(plan) {
+    if (!user) { go("login"); return; }
+    setBusy(true);
+    setPayState("");
+    setPayMsg(t.payWait);
+    try {
+      const { data } = await supabase.auth.getSession();
+      const token = data.session && data.session.access_token;
+      if (!token) throw new Error(t.payErr);
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: "Bearer " + token },
+        body: JSON.stringify({ plan }),
+      });
+      const j = await res.json();
+      if (!res.ok || !j.url) throw new Error(j.error || t.payErr);
+      window.location.href = j.url;
+      return;
+    } catch (e) {
+      setPayMsg(e.message || t.payErr);
+    }
     setBusy(false);
   }
 
@@ -805,6 +858,7 @@ export default function Home() {
   const premVideos = videos.filter((v) => v.user_id).slice(-6).reverse();
   const premTracks = tracks.filter((x) => x.profiles?.is_premium).slice(0, 6);
   const reqStatus = (id) => (reqs.find((r) => r.track_id === id) || {}).status;
+  const payNote = payMsg || (payState === "ok" ? t.payOk : payState === "cancel" ? t.payCancel : "");
 
   function renderRow(x, i) {
     const idx = tracks.indexOf(x);
@@ -1199,9 +1253,11 @@ export default function Home() {
                   <div className="pcard"><b>{PRICE_MONTH}</b><small>{t.perMonth}</small></div>
                   <div className="pcard best"><b>{PRICE_YEAR}</b><small>{t.perYear}</small><i>{t.yearSave}</i></div>
                 </div>
-                <p className="sub" style={{ marginTop: 10, marginBottom: 0 }}>{t.cardSoon}</p>
+                <button className="btn" onClick={() => payCard("month")} disabled={busy}>{t.payCard} · {PRICE_MONTH} {t.perMonth}</button>
+                <button className="btn" onClick={() => payCard("year")} disabled={busy}>{t.payCard} · {PRICE_YEAR} {t.perYear}</button>
               </section>
             </>)}
+          {payNote ? <p className="msg" style={{ textAlign: "center" }}>{payNote}</p> : null}
           {!user && <button className="btn alt" onClick={() => go("login")}>{t.loginBtn}</button>}
           {isPrem && <button className="btn alt" onClick={() => go("me")}>{t.premSpace}</button>}
         </div>
