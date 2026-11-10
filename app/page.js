@@ -1572,8 +1572,192 @@ export default function Home() {
         })}
       </>)}
 
-      {!showLogin && tab === "tv" && (<>
+   {!showLogin && tab === "tv" && (<>
         <h2 className="st2">{t.tv}</h2>
         {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
         {tvs.map((s) => (
-          <div className="stn" key=
+          <div className="stn" key={s.id}>
+            <div className="liveb"><i />{t.live}</div>
+            <strong>{s.name}</strong>
+            {s.stream_url.startsWith("iframe:") || s.stream_url.includes("embed")
+              ? (frameSrc(s.stream_url) ? <iframe className="vid" src={frameSrc(s.stream_url)} allow="autoplay; fullscreen" allowFullScreen /> : null)
+              : <video className="vid" controls playsInline src={s.stream_url} />}
+          </div>
+        ))}
+      </>)}
+
+      {user && tab === "messages" && (<>
+        <h2 className="st2">{t.msgs}</h2>
+        {convs.length === 0 && <p className="sub">{t.noConv}</p>}
+        {convs.map((c) => {
+          const oid = c.user_a === user.id ? c.user_b : c.user_a;
+          const o = profiles.find((p) => p.id === oid);
+          const last = inbox.find((m) => m.conversation_id === c.id);
+          const un = inbox.filter((m) => m.conversation_id === c.id && !m.is_read && m.sender_id !== user.id).length;
+          return (
+            <button className="conv" key={c.id} onClick={() => openConv(c)}>
+              <Avatar p={o} size="md" />
+              <span className="rt">
+                <b>{o?.username || "?"}<PB p={o} /></b>
+                <small>{last ? (last.sender_id === user.id ? t.you + " : " : "") + last.body : ""}</small>
+              </span>
+              {un > 0 && <span className="cun">{un > 9 ? "9+" : un}</span>}
+            </button>
+          );
+        })}
+      </>)}
+
+      {user && tab === "chat" && chat && (() => {
+        const o = profiles.find((p) => p.id === chat.other);
+        return (<>
+          <button className="outl small" onClick={() => go("messages")} style={{ marginTop: 16 }}>← {t.back}</button>
+          <div className="chead">
+            <Avatar p={o} size="md" />
+            <h2 className="st2" style={{ margin: 0 }}>{o?.username || "?"}<PB p={o} /></h2>
+          </div>
+          <div className="chat">
+            {msgs.map((m) => (
+              <div className={"bub" + (m.sender_id === user.id ? " me" : "")} key={m.id}>
+                {m.body}
+                <small>{ago(m.created_at, lang)}</small>
+              </div>
+            ))}
+          </div>
+          <div className="crow">
+            <input placeholder={t.typeMsg} maxLength={2000} value={mDraft} onChange={(e) => setMDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") sendMsg(); }} />
+            <button onClick={sendMsg} aria-label={t.sendMsg}><Icon n="send" s={18} /></button>
+          </div>
+          <div ref={endRef} />
+        </>);
+      })()}
+
+      {user && tab === "pub" && (
+        <div className="form">
+          <h2 className="st2">{t.pub}</h2>
+          <input placeholder={t.title} maxLength={120} value={title} onChange={(e) => setTitle(e.target.value)} />
+          <label>Audio</label>
+          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
+          <label>{t.cover}</label>
+          <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
+          <label className="chkrow"><input type="checkbox" checked={allowDl} onChange={(e) => setAllowDl(e.target.checked)} />{t.dlAllow}</label>
+          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
+          <p className="msg">{msg}</p>
+        </div>
+      )}
+
+      {user && tab === "me" && (
+        <div className="form">
+          <Avatar p={profile} size="big" />
+          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}<PB p={profile} full /></h2>
+          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
+          <label>{t.photo}</label>
+          <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
+          <label>{t.bio}</label>
+          <textarea maxLength={500} value={bio} onChange={(e) => setBio(e.target.value)} />
+          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
+          <p className="msg">{msg}</p>
+
+          <h4 style={{ margin: "18px 0 4px" }}>{t.myTracks}</h4>
+          {tracks.filter((x) => x.artist_id === user.id).length === 0 && <p className="sub">{t.noTracks}</p>}
+          {tracks.filter((x) => x.artist_id === user.id).map((x) => (
+            <div className="mrow" key={x.id}>
+              <b>{x.title}{rankMap[x.id] ? <Mic r={rankMap[x.id]} s={16} /> : null}<small style={{ display: "block", color: "#8fa6bf", fontWeight: 400 }}>{x.plays || 0} {t.plays}</small></b>
+              <button className="sbtn" onClick={() => toggleDl(x)}>{x.allow_download === false ? t.dlOff : t.dlOn}</button>
+            </div>
+          ))}
+
+          {isPrem ? (
+            <section className="panel gold" style={{ marginTop: 18 }}>
+              <h3 className="ptitle">★ {t.premSpace}</h3>
+
+              <h4 style={{ margin: "18px 0 4px" }}>{t.rTitle}</h4>
+              {tracks.filter((x) => x.artist_id === user.id).length === 0 && <p className="sub">{t.noTracks}</p>}
+              {tracks.filter((x) => x.artist_id === user.id).map((x) => {
+                const st = reqStatus(x.id);
+                return (
+                  <div className="mrow" key={x.id}>
+                    <b>{x.title}</b>
+                    {st === "pending" ? <span className="chip">{t.rPending}</span>
+                      : st === "approved" ? <span className="chip ok">{t.rOk}</span>
+                      : st === "rejected" ? <span className="chip no">{t.rNo}</span>
+                      : <button className="sbtn" onClick={() => requestRadio(x)} disabled={busy}>{t.askRadio}</button>}
+                  </div>
+                );
+              })}
+
+              <h4 style={{ margin: "22px 0 0" }}>{t.addVideo}</h4>
+              <input placeholder={t.vTitle} maxLength={120} value={vTitle} onChange={(e) => setVTitle(e.target.value)} />
+              <input placeholder={t.vLink} value={vUrl} onChange={(e) => setVUrl(e.target.value)} />
+              <button className="btn" onClick={addVideo} disabled={busy}>{t.addVideo}</button>
+              {videos.filter((v) => v.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myVideos}</h4>}
+              {videos.filter((v) => v.user_id === user.id).map((v) => (
+                <div className="mrow" key={v.youtube_id}>
+                  <b>{v.title}</b>
+                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteVideo(v)}>{t.del}</button>
+                </div>
+              ))}
+
+              <h4 style={{ margin: "22px 0 0" }}>{t.addEvent}</h4>
+              <input placeholder={t.evTitle} maxLength={120} value={evTitle} onChange={(e) => setEvTitle(e.target.value)} />
+              <input placeholder={t.evPlace} maxLength={120} value={evPlace} onChange={(e) => setEvPlace(e.target.value)} />
+              <label>{t.evDate}</label>
+              <input type="datetime-local" value={evDate} onChange={(e) => setEvDate(e.target.value)} />
+              <input placeholder={t.evLink} value={evLink} onChange={(e) => setEvLink(e.target.value)} />
+              <textarea placeholder={t.evDesc} maxLength={500} value={evDesc} onChange={(e) => setEvDesc(e.target.value)} />
+              <button className="btn" onClick={addEvent} disabled={busy}>{t.addEvent}</button>
+              {events.filter((e) => e.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myEvents}</h4>}
+              {events.filter((e) => e.user_id === user.id).map((e) => (
+                <div className="mrow" key={e.id}>
+                  <b>{e.title}</b>
+                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteEvent(e.id)}>{t.del}</button>
+                </div>
+              ))}
+              <p className="msg">{pMsg}</p>
+            </section>
+          ) : (
+            <button className="btn alt" onClick={() => go("premium")}>★ {t.premGo}</button>
+          )}
+
+          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
+          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
+        </div>
+      )}
+
+      {curT && !rOn && (
+        <div className="mini">
+          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
+          <div className="mt">
+            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
+            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
+          </div>
+          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
+          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
+          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
+        </div>
+      )}
+
+      {rOn && rNow && tab !== "radio" && (
+        <div className="mini">
+          <div className="th" style={{ backgroundImage: rCoverImg ? cssUrl(rCoverImg) : 'url("/icon-512.png")', width: 44, height: 44, flex: "0 0 44px" }} />
+          <div className="mt">
+            <b>{rNow.title}</b><small>● {t.live} · {rNow.artist}</small>
+            <div className="bar"><i style={{ width: (rNow.duration_seconds ? (rInfo.off / rNow.duration_seconds) * 100 : 0) + "%" }} /></div>
+          </div>
+          <button onClick={() => go("radio")} aria-label="Radio"><Icon n="radio" s={18} /></button>
+          <button className="mp" onClick={stopRadio} aria-label="Stop"><Icon n="pause" s={20} fill /></button>
+        </div>
+      )}
+
+      <footer className="foot"><div className="owner">{"© 2026 "}<b>KMIKZ RAPATIZ</b>{" · " + t.owner}</div><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
+
+      <nav className="bot">
+        {bot.map(([k, n, ic]) => (
+          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
+            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
+          </button>
+        ))}
+      </nav>
+    </div>
+  );
+}
+   
