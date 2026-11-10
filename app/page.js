@@ -26,17 +26,21 @@ const T = {
     activities: "Activités", events: "Événements à venir", noEvents: "Aucun événement pour l'instant.", seeAct: "Voir les activités", more: "Plus d'infos", del: "Supprimer", premSpace: "Espace premium", askRadio: "Demander la radio", rPending: "En attente de validation", rOk: "À l'antenne", rNo: "Refusé", rSent: "Demande envoyée !", rLen: "Le titre doit durer entre 30 secondes et 15 minutes.", rTitle: "Mes titres pour la radio", noTracks: "Aucun titre.",
     addVideo: "Ajouter une vidéo", vTitle: "Titre de la vidéo", vLink: "Lien YouTube", vBad: "Un titre et un lien YouTube valide sont requis.", vOk: "Vidéo ajoutée !", myVideos: "Mes vidéos",
     addEvent: "Ajouter un événement", evTitle: "Nom de l'événement", evPlace: "Lieu", evDate: "Date et heure", evLink: "Lien https:// (optionnel)", evDesc: "Description (optionnelle)", evBad: "Un nom, une date valide et un lien en https:// (ou vide) sont requis.", evOk: "Événement ajouté !", myEvents: "Mes événements", premVideos: "Vidéos des artistes premium", premTracks: "Titres des artistes premium",
-    payCard: "Payer par carte", payWait: "Redirection vers le paiement...", payOk: "Merci ! Paiement reçu. Ton compte premium s'active dans quelques secondes.", payCancel: "Paiement annulé.", payErr: "Erreur de paiement. Réessaie." },
+    payCard: "Payer par carte", payWait: "Redirection vers le paiement...", payOk: "Merci ! Paiement reçu. Ton compte premium s'active dans quelques secondes.", payCancel: "Paiement annulé.", payErr: "Erreur de paiement. Réessaie.",
+    dl: "Télécharger", dlAllow: "Autoriser le téléchargement de ce titre", dlOn: "Téléchargement autorisé", dlOff: "Téléchargement bloqué", myTracks: "Mes titres", plays: "écoutes", msgs: "Messages", msgBtn: "Message", noConv: "Aucune conversation. Ouvre le profil d'un artiste pour lui écrire.", typeMsg: "Écrire un message...", sendMsg: "Envoyer", you: "Toi", msgErr: "Message non envoyé. Réessaie." },
   en: { tag: "Haitian music, Haitian rap.", email: "Email", pass: "Password", loginBtn: "Log in", signup: "Sign up", name: "Choose your artist name", save: "Save", home: "Home", artists: "Artists", music: "Music", videos: "Videos", me: "Profile", pub: "Post", hero: "The platform for Haitian artists and the diaspora", slogan: "LISTEN · WATCH · SHARE · SUPPORT", radioSub: "Listen live", tvSub: "Channels & Shows", musSub: "Listen to tracks", vidSub: "Watch & Share", artistsSub: "Discover artists of the moment", seeArtists: "See all artists", featured: "FEATURED ARTIST", seeProfile: "View profile", posts: "Latest posts", seePosts: "See more posts", gallery: "Artist gallery", gallerySub: "Photos, covers, backstage...", noPhoto: "No photos yet.", showcase: "Featured artists", showcaseSub: "The faces of RAPLIKE 509", soon: "Coming soon", tracksN: "tracks", back: "Back", noBio: "No bio yet.", noArtists: "No artists yet.", none: "No tracks yet.", title: "Title", send: "Publish track", out: "Log out", ok: "Track published!", need: "Add a title and an audio file.", wait: "Uploading...", lang: "Language", bio: "Your bio", photo: "Profile photo", cover: "Cover (optional)", saved: "Profile saved!", search: "Search an artist or track...", write: "Write a comment...", post: "Send", nocom: "No comments", nostat: "No stations yet.", live: "LIVE", novid: "No videos yet.", listen: "Listen to the radio", stopR: "Stop the radio", nowP: "Now playing", nextP: "Up next", noRadio: "The radio playlist is empty for now.", tune: "Tap to listen", bad: "File refused: audio 30 MB max, image 5 MB max (JPG, PNG or WebP).", weak: "Password too short: 8 characters minimum.", badName: "The name must be 2 to 30 characters.", aboutTitle: "About RAPLIKE 509", owner: "Owner of the website and the app", notif: "Notifications", notifNone: "No notifications.", nTrack: "New track", nLike: "liked your track", nComment: "New comment", nArtist: "New artist", nAnn: "NEWS", aboutP1: "RAPLIKE 509 is the platform for Haitian music and Haitian rap (Kreyòl rap). Listen to tracks from Haitian artists and the diaspora, watch their videos, discover their profiles and share your music.", aboutP2: "You will also find RAPLIKE 509 Radio, live radio stations and Haitian TV channels. Create a free account to publish your tracks, like and comment.",
     prem: "Premium", premGo: "Go premium", premTitle: "RAPLIKE 509 Premium", premSub: "More visibility for your music.", premB1: "Your music in rotation on RAPLIKE 509 Radio, 24/7", premB2: "Your YouTube videos on the site", premB3: "A banner to promote your events", premB4: "An Activities page showing what you are up to", premB5: "Premium badge and “Featured artist” spotlight", premPay: "Card payment is coming soon. Contact us to activate your premium account.", premContact: "Contact us", haiti: "I am in Haiti", diaspora: "I am in the diaspora", hStep1: "Send the amount by MonCash or Natcash to the number below.", hStep2: "Send the payment screenshot and your artist name on WhatsApp.", hStep3: "Your premium account is activated after verification.", hDur: "Monthly = 30 days, yearly = 1 year.", cardSoon: "Card payment: coming soon.", perMonth: "per month", perYear: "per year", yearSave: "≈ 2 months free", priceFrom: "From", premYou: "You are premium ★", premPromo: "Your music on the radio, your videos and your events in the spotlight.",
     activities: "Activities", events: "Upcoming events", noEvents: "No events yet.", seeAct: "See activities", more: "More info", del: "Delete", premSpace: "Premium space", askRadio: "Request radio", rPending: "Waiting for approval", rOk: "On air", rNo: "Declined", rSent: "Request sent!", rLen: "The track must last between 30 seconds and 15 minutes.", rTitle: "My tracks for the radio", noTracks: "No tracks.",
     addVideo: "Add a video", vTitle: "Video title", vLink: "YouTube link", vBad: "A title and a valid YouTube link are required.", vOk: "Video added!", myVideos: "My videos",
     addEvent: "Add an event", evTitle: "Event name", evPlace: "Place", evDate: "Date and time", evLink: "https:// link (optional)", evDesc: "Description (optional)", evBad: "A name, a valid date and an https:// link (or none) are required.", evOk: "Event added!", myEvents: "My events", premVideos: "Premium artists' videos", premTracks: "Premium artists' tracks",
-    payCard: "Pay by card", payWait: "Redirecting to payment...", payOk: "Thank you! Payment received. Your premium account will activate in a few seconds.", payCancel: "Payment cancelled.", payErr: "Payment error. Please try again." },
+    payCard: "Pay by card", payWait: "Redirecting to payment...", payOk: "Thank you! Payment received. Your premium account will activate in a few seconds.", payCancel: "Payment cancelled.", payErr: "Payment error. Please try again.",
+    dl: "Download", dlAllow: "Allow downloading this track", dlOn: "Download allowed", dlOff: "Download blocked", myTracks: "My tracks", plays: "plays", msgs: "Messages", msgBtn: "Message", noConv: "No conversations yet. Open an artist's profile to write to them.", typeMsg: "Write a message...", sendMsg: "Send", you: "You", msgErr: "Message not sent. Please try again." },
   ht: { tag: "Mizik ayisyen, rap ayisyen.", email: "Imèl", pass: "Modpas", loginBtn: "Konekte", signup: "Kreye yon kont", name: "Chwazi non atis ou", save: "Anrejistre", home: "Akèy", artists: "Atis", music: "Mizik", videos: "Videyo", radio: "Radyo", me: "Pwofil", pub: "Pibliye", hero: "Platfòm atis ayisyen yo ak dyaspora a", slogan: "KOUTE · GADE · PATAJE · SIPÒTE", radioSub: "Koute an dirèk", tvSub: "Chèn ak Emisyon", musSub: "Koute mizik yo", vidSub: "Gade ak Pataje", artistsSub: "Dekouvri atis moman an", seeArtists: "Wè tout atis yo", featured: "ATIS NAN VITRIN", seeProfile: "Wè pwofil la", posts: "Dènye piblikasyon", showcase: "Atis ki an vedèt", showcaseSub: "Vizaj RAPLIKE 509", soon: "Talè konsa", tracksN: "mizik", back: "Retounen", none: "Poko gen mizik.", title: "Tit", send: "Pibliye mizik la", out: "Soti", ok: "Mizik la pibliye !", need: "Mete yon tit ak yon fichye odyo.", wait: "N ap voye...", lang: "Lang", bio: "Bio ou", photo: "Foto pwofil", cover: "Kouvèti (opsyonèl)", saved: "Pwofil la anrejistre !", search: "Chèche yon atis oswa yon mizik...", write: "Ekri yon kòmantè...", post: "Voye", nocom: "Pa gen kòmantè", nostat: "Poko gen estasyon.", live: "AN DIRÈK", novid: "Poko gen videyo.", listen: "Koute radyo a", stopR: "Kanpe radyo a", nowP: "Kounye a", nextP: "Apre sa", noRadio: "Playlist radyo a vid pou kounye a.", tune: "Peze pou koute", aboutTitle: "Sou RAPLIKE 509", owner: "Pwopriyetè sit la ak aplikasyon an", notif: "Notifikasyon", notifNone: "Pa gen notifikasyon.", nTrack: "Nouvo mizik", nLike: "renmen mizik ou", nComment: "Nouvo kòmantè", nArtist: "Nouvo atis", nAnn: "ANONS", aboutP1: "RAPLIKE 509 se platfòm mizik ayisyen ak rap ayisyen (rap kreyòl). Koute mizik atis ayisyen yo ak dyaspora a, gade klip yo, dekouvri pwofil yo epi pataje mizik ou.", aboutP2: "Ou ap jwenn tou RAPLIKE 509 Radio, estasyon radyo an dirèk ak chèn televizyon ayisyen. Kreye yon kont gratis pou pibliye mizik ou, renmen ak kòmante mizik yo.",
-    prem: "Premium", perMonth: "pa mwa", perYear: "pa ane", priceFrom: "Depi", premGo: "Vin premium", premTitle: "RAPLIKE 509 Premium", activities: "Aktivite", events: "Evènman k ap vini", noEvents: "Poko gen evènman.", seeAct: "Wè aktivite yo", premSpace: "Espas premium", addVideo: "Ajoute yon videyo", addEvent: "Ajoute yon evènman", del: "Efase" },
+    prem: "Premium", perMonth: "pa mwa", perYear: "pa ane", priceFrom: "Depi", premGo: "Vin premium", premTitle: "RAPLIKE 509 Premium", activities: "Aktivite", events: "Evènman k ap vini", noEvents: "Poko gen evènman.", seeAct: "Wè aktivite yo", premSpace: "Espas premium", addVideo: "Ajoute yon videyo", addEvent: "Ajoute yon evènman", del: "Efase",
+    dl: "Telechaje", plays: "koute", msgs: "Mesaj", msgBtn: "Mesaj", typeMsg: "Ekri yon mesaj...", sendMsg: "Voye", you: "Ou" },
   es: { tag: "Música haitiana, rap haitiano.", email: "Correo", pass: "Contraseña", loginBtn: "Iniciar sesión", signup: "Crear cuenta", name: "Elige tu nombre artístico", save: "Guardar", home: "Inicio", artists: "Artistas", music: "Música", videos: "Videos", me: "Perfil", pub: "Publicar", hero: "La plataforma de los artistas haitianos y la diáspora", slogan: "ESCUCHA · MIRA · COMPARTE · APOYA", radioSub: "Escucha en vivo", tvSub: "Canales y Programas", musSub: "Escucha los temas", vidSub: "Mira y Comparte", artistsSub: "Descubre los artistas del momento", seeArtists: "Ver todos los artistas", featured: "ARTISTA DESTACADO", seeProfile: "Ver perfil", posts: "Últimas publicaciones", showcase: "Artistas destacados", showcaseSub: "Los rostros de RAPLIKE 509", soon: "Próximamente", tracksN: "temas", back: "Volver", none: "Aún no hay temas.", title: "Título", send: "Publicar tema", out: "Salir", ok: "¡Tema publicado!", need: "Añade un título y un archivo de audio.", wait: "Subiendo...", lang: "Idioma", bio: "Tu bio", photo: "Foto de perfil", cover: "Portada (opcional)", saved: "¡Perfil guardado!", search: "Buscar un artista o tema...", write: "Escribe un comentario...", post: "Enviar", nocom: "Sin comentarios", nostat: "Aún no hay estaciones.", live: "EN VIVO", novid: "Aún no hay videos.", listen: "Escuchar la radio", stopR: "Detener la radio", nowP: "Ahora suena", nextP: "A continuación", noRadio: "La lista de la radio está vacía por ahora.", tune: "Toca para escuchar", aboutTitle: "Sobre RAPLIKE 509", owner: "Propietario del sitio y de la aplicación", notif: "Notificaciones", notifNone: "Sin notificaciones.", nTrack: "Nuevo tema", nLike: "dio me gusta a tu tema", nComment: "Nuevo comentario", nArtist: "Nuevo artista", nAnn: "ANUNCIO", aboutP1: "RAPLIKE 509 es la plataforma de la música haitiana y el rap haitiano (rap kreyòl). Escucha temas de artistas haitianos y de la diáspora, mira sus videos, descubre sus perfiles y comparte tu música.", aboutP2: "También encontrarás RAPLIKE 509 Radio, emisoras de radio en vivo y canales de televisión haitianos. Crea una cuenta gratis para publicar tus temas, dar me gusta y comentar.",
-    prem: "Premium", perMonth: "al mes", perYear: "al año", priceFrom: "Desde", premGo: "Hazte premium", premTitle: "RAPLIKE 509 Premium", activities: "Actividades", events: "Próximos eventos", noEvents: "Aún no hay eventos.", seeAct: "Ver actividades", premSpace: "Espacio premium", addVideo: "Añadir un video", addEvent: "Añadir un evento", del: "Eliminar" },
+    prem: "Premium", perMonth: "al mes", perYear: "al año", priceFrom: "Desde", premGo: "Hazte premium", premTitle: "RAPLIKE 509 Premium", activities: "Actividades", events: "Próximos eventos", noEvents: "Aún no hay eventos.", seeAct: "Ver actividades", premSpace: "Espacio premium", addVideo: "Añadir un video", addEvent: "Añadir un evento", del: "Eliminar",
+    dl: "Descargar", plays: "reproducciones", msgs: "Mensajes", msgBtn: "Mensaje", typeMsg: "Escribe un mensaje...", sendMsg: "Enviar", you: "Tú" },
 };
 const LANGS = [["en", "English"], ["fr", "Français"], ["ht", "Kreyòl"], ["es", "Español"]];
 const COVERS = ["#0a3cff,#02030a", "#1e90ff,#02030a", "#0a3cff,#29b6ff"];
@@ -62,6 +66,15 @@ const ytId = (u) => {
   if (/^[A-Za-z0-9_-]{11}$/.test(s)) return s;
   const m = s.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{11})/);
   return m ? m[1] : "";
+};
+// Lien de téléchargement d'un titre (force le téléchargement du fichier depuis Supabase Storage)
+const dlUrl = (x) => {
+  const u = (x && x.audio_url) || "";
+  if (!/^https:\/\//i.test(u)) return "";
+  const m = u.split("?")[0].match(/\.([A-Za-z0-9]{2,5})$/);
+  const base = ((x.title || "titre").replace(/[^\p{L}\p{N}._ -]/gu, "_").slice(0, 80)) || "titre";
+  const name = base + "." + (m ? m[1] : "mp3");
+  return u.includes("/storage/v1/object/public/") ? u + (u.includes("?") ? "&" : "?") + "download=" + encodeURIComponent(name) : u;
 };
 // Durée d'un fichier audio en secondes (lue dans le navigateur)
 function audioDuration(url) {
@@ -91,12 +104,28 @@ const P = {
   video: "M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zM10 9l5 3-5 3z",
   users: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8",
   star: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+  download: "M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3",
+  headphones: "M3 18v-6a9 9 0 0118 0v6M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z",
+  send: "M22 2L11 13M22 2l-7 20-4-9-9-4z",
 };
 function Icon({ n, s = 22, fill }) {
   return (
     <svg width={s} height={s} viewBox="0 0 24 24" fill={fill ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d={P[n]} />
     </svg>
+  );
+}
+// Micro de classement : 1 = or, 2 = argent, 3 = bronze
+function Mic({ r, s = 18 }) {
+  const c = r === 1 ? "#f5c542" : r === 2 ? "#d3dce8" : "#cd7f32";
+  const nm = r === 1 ? "Top 1 · or" : r === 2 ? "Top 2 · argent" : "Top 3 · bronze";
+  return (
+    <span className={"mic r" + r} title={nm} aria-label={nm}>
+      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="9" y="2" width="6" height="12" rx="3" fill={c} />
+        <path d="M5 11a7 7 0 0014 0M12 18v4M8 22h8" />
+      </svg>
+    </span>
   );
 }
 function Avatar({ p, size }) {
@@ -351,9 +380,16 @@ label{display:block;margin-top:14px;color:#8fa6bf;font-size:13px}
 .rt b,.rt small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rt small{color:#8fa6bf}
 .pl{width:42px;height:42px;border-radius:50%;border:0;background:linear-gradient(135deg,#29b6ff,#0a63d6);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px #1e90ffaa,inset 0 1px 0 #ffffff66}
-.act{display:flex;gap:20px;margin-top:10px}
+.act{display:flex;align-items:center;gap:20px;margin-top:10px}
 .act button{background:none;border:0;color:#8fa6bf;font-size:14px;display:flex;align-items:center;gap:6px;padding:0}
 .act .liked{color:#29b6ff}
+.act a{color:#8fa6bf;font-size:14px;display:flex;align-items:center;gap:6px;text-decoration:none}
+.act a:active{color:#29b6ff}
+.pc{display:inline-flex;align-items:center;gap:6px;color:#9fb4c9;font-size:14px}
+.mic{display:inline-flex;vertical-align:middle;margin-left:6px;filter:drop-shadow(0 0 5px currentColor)}
+.mic.r1{color:#f5c542}
+.mic.r2{color:#d3dce8}
+.mic.r3{color:#cd7f32}
 .cbox{margin-top:10px;padding-top:10px;border-top:1px solid #2f6bff44}
 .cm{padding:6px 0;font-size:14px}
 .cm b{color:#29b6ff;margin-right:6px}
@@ -461,6 +497,18 @@ audio{width:100%}
 .pcard b{display:block;font-size:26px;color:#fff}
 .pcard small{display:block;color:#c4d4e6;margin-top:2px}
 .pcard i{display:block;font-style:normal;color:#f5c542;font-size:12px;font-weight:700;margin-top:6px}
+
+/* ---- Messagerie entre artistes ---- */
+.outl.msgb{display:inline-flex;align-items:center;gap:8px}
+.chkrow{display:flex;align-items:center;gap:10px;margin-top:14px;color:#c4d4e6;font-size:14px}
+.chkrow input{width:22px;height:22px;margin:0;padding:0;display:inline-block;accent-color:#29b6ff;flex:0 0 22px;box-shadow:none}
+.conv{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:linear-gradient(180deg,#0a2a8c33,#030824cc);border:1px solid #2f6bff66;border-radius:20px;padding:12px;margin-bottom:10px;color:#fff;box-shadow:0 0 14px #0a2cff2e,inset 0 1px 0 #6fb4ff44}
+.cun{min-width:24px;height:24px;border-radius:12px;background:#29b6ff;color:#001030;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;padding:0 7px;box-shadow:0 0 10px #29b6ff}
+.chead{display:flex;align-items:center;gap:12px;margin:14px 0 4px}
+.chat{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.bub{align-self:flex-start;max-width:80%;padding:10px 14px;border-radius:18px 18px 18px 6px;font-size:15px;line-height:1.4;overflow-wrap:anywhere;background:linear-gradient(180deg,#1c2036,#0b0e1c);border:1px solid #ffffff2a}
+.bub.me{align-self:flex-end;border-radius:18px 18px 6px 18px;background:linear-gradient(135deg,#29b6ff,#0a63d6);border:0;box-shadow:0 0 14px #1e90ff66}
+.bub small{display:block;font-size:11px;opacity:.7;margin-top:4px}
 @media(min-width:900px){
   .page{padding:0 24px 120px;margin:14px auto}
   .links{display:flex;gap:4px}
@@ -499,6 +547,7 @@ export default function Home() {
   const [title, setTitle] = useState("");
   const [file, setFile] = useState(null);
   const [coverFile, setCoverFile] = useState(null);
+  const [allowDl, setAllowDl] = useState(true);
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
   const [tracks, setTracks] = useState([]);
@@ -525,6 +574,12 @@ export default function Home() {
   const [anns, setAnns] = useState([]);
   const [bellOpen, setBellOpen] = useState(false);
   const [annSeen, setAnnSeen] = useState(0);
+  // Messagerie entre artistes
+  const [convs, setConvs] = useState([]);
+  const [inbox, setInbox] = useState([]);
+  const [chat, setChat] = useState(null);
+  const [msgs, setMsgs] = useState([]);
+  const [mDraft, setMDraft] = useState("");
   // Premium
   const [events, setEvents] = useState([]);
   const [reqs, setReqs] = useState([]);
@@ -542,11 +597,17 @@ export default function Home() {
   const aRef = useRef(null);
   const rRef = useRef(null);
   const rIdx = useRef(-1);
+  const counted = useRef(new Set());
+  const chatRef = useRef(null);
+  const tabRef = useRef("home");
+  const endRef = useRef(null);
   const t = { ...T.fr, ...T[lang || "fr"] };
   useEffect(() => { document.body.dataset.tab = artistId ? "artiste" : tab; }, [tab, artistId]);
+  useEffect(() => { tabRef.current = tab; }, [tab]);
+  useEffect(() => { chatRef.current = chat; }, [chat]);
   async function loadTracks() {
     const { data } = await supabase.from("tracks")
-      .select("id,title,audio_url,cover_url,artist_id,created_at,profiles!artist_id(username,avatar_url,is_premium)")
+      .select("id,title,audio_url,cover_url,artist_id,created_at,plays,allow_download,profiles!artist_id(username,avatar_url,is_premium)")
       .order("created_at", { ascending: false });
     setTracks(data || []);
   }
@@ -616,6 +677,53 @@ export default function Home() {
   function toggleBell() {
     if (bellOpen) { markRead(); setBellOpen(false); }
     else { loadNotifs(); loadAnns(); setBellOpen(true); }
+  }
+
+  // ---- Messagerie entre artistes ----
+  async function loadInbox() {
+    if (!user) return;
+    const c = await supabase.from("conversations").select("id,user_a,user_b,last_message_at").order("last_message_at", { ascending: false });
+    const m = await supabase.from("messages").select("id,conversation_id,sender_id,body,is_read,created_at").order("created_at", { ascending: false }).limit(300);
+    setConvs(c.data || []);
+    setInbox(m.data || []);
+  }
+  async function loadMsgs(cid) {
+    const { data } = await supabase.from("messages")
+      .select("id,sender_id,body,is_read,created_at")
+      .eq("conversation_id", cid)
+      .order("created_at", { ascending: true })
+      .limit(300);
+    setMsgs(data || []);
+    if (user && (data || []).some((x) => !x.is_read && x.sender_id !== user.id)) {
+      await supabase.from("messages").update({ is_read: true }).eq("conversation_id", cid).neq("sender_id", user.id).eq("is_read", false);
+      loadInbox();
+    }
+  }
+  async function openChat(otherId) {
+    if (!user) { go("login"); return; }
+    if (otherId === user.id) return;
+    const { data, error } = await supabase.rpc("get_or_create_conversation", { other: otherId });
+    if (error || !data) { window.alert(t.msgErr); return; }
+    setChat({ id: data, other: otherId });
+    setMsgs([]);
+    go("chat");
+    loadMsgs(data);
+  }
+  function openConv(c) {
+    const other = c.user_a === user.id ? c.user_b : c.user_a;
+    setChat({ id: c.id, other });
+    setMsgs([]);
+    go("chat");
+    loadMsgs(c.id);
+  }
+  async function sendMsg() {
+    const body = mDraft.trim().slice(0, 2000);
+    if (!body || !chat || !user) return;
+    setMDraft("");
+    const { error } = await supabase.from("messages").insert({ conversation_id: chat.id, sender_id: user.id, body });
+    if (error) { setMDraft(body); window.alert(t.msgErr); return; }
+    loadMsgs(chat.id);
+    loadInbox();
   }
 
   // Radio virtuelle : synchronise le lecteur avec l'heure
@@ -694,6 +802,30 @@ export default function Home() {
     loadReqs();
   }, [user]);
 
+  // Messagerie : chargement, temps réel et rafraîchissement toutes les 30 secondes
+  useEffect(() => {
+    if (!user) { setConvs([]); setInbox([]); setChat(null); setMsgs([]); return; }
+    loadInbox();
+    const ch = supabase.channel("msgs-" + user.id)
+      .on("postgres_changes", { event: "INSERT", schema: "public", table: "messages" }, (p) => {
+        loadInbox();
+        const c = chatRef.current;
+        if (c && tabRef.current === "chat" && p.new && p.new.conversation_id === c.id) loadMsgs(c.id);
+      })
+      .subscribe();
+    const id = setInterval(() => {
+      loadInbox();
+      const c = chatRef.current;
+      if (c && tabRef.current === "chat") loadMsgs(c.id);
+    }, 30000);
+    return () => { clearInterval(id); supabase.removeChannel(ch); };
+  }, [user]);
+
+  // Descend en bas de la conversation quand un message arrive
+  useEffect(() => {
+    if (tab === "chat" && endRef.current) endRef.current.scrollIntoView({ block: "end" });
+  }, [msgs, tab]);
+
   // Retour de Stripe : ?premium=ok ou ?premium=annule dans l'adresse
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -745,6 +877,7 @@ export default function Home() {
     if (bellOpen) { markRead(); setBellOpen(false); }
     if (k !== "radio") setActiveSt(null);
     if (k === "activities") loadEvents();
+    if (k === "messages") loadInbox();
     setPMsg("");
     setTab(k); setMsg(""); if (typeof window !== "undefined") window.scrollTo(0, 0);
   }
@@ -791,11 +924,18 @@ export default function Home() {
       if (up.error) throw up.error;
       const audio_url = supabase.storage.from("audio").getPublicUrl(path).data.publicUrl;
       const cover_url = coverFile ? await uploadImage(coverFile) : null;
-      const ins = await supabase.from("tracks").insert({ artist_id: user.id, title: ttl, audio_url, cover_url });
+      const ins = await supabase.from("tracks").insert({ artist_id: user.id, title: ttl, audio_url, cover_url, allow_download: allowDl });
       if (ins.error) throw ins.error;
-      setMsg(t.ok); setTitle(""); setFile(null); setCoverFile(null); await loadTracks(); go("music");
+      setMsg(t.ok); setTitle(""); setFile(null); setCoverFile(null); setAllowDl(true); await loadTracks(); go("music");
     } catch (e) { setMsg(e.message); }
     setBusy(false);
+  }
+  // Autoriser ou bloquer le téléchargement d'un de ses titres
+  async function toggleDl(x) {
+    const v = x.allow_download === false;
+    setTracks((l) => l.map((y) => (y.id === x.id ? { ...y, allow_download: v } : y)));
+    const { error } = await supabase.from("tracks").update({ allow_download: v }).eq("id", x.id).eq("artist_id", user.id);
+    if (error) loadTracks();
   }
 
   // ---- Paiement par carte (Stripe) ----
@@ -911,6 +1051,16 @@ export default function Home() {
     const r = e.currentTarget.getBoundingClientRect();
     a.currentTime = ((e.clientX - r.left) / r.width) * a.duration;
   }
+  // Compte une écoute (une seule fois par titre et par session, après ~10 secondes de lecture)
+  function countPlay(ct, dur) {
+    const x = cur >= 0 ? tracks[cur] : null;
+    if (!x || !user || counted.current.has(x.id)) return;
+    if (ct < Math.min(10, (dur || 20) / 2)) return;
+    counted.current.add(x.id);
+    supabase.rpc("increment_play", { track_id: x.id }).then(({ error }) => {
+      if (!error) setTracks((l) => l.map((y) => (y.id === x.id ? { ...y, plays: (y.plays || 0) + 1 } : y)));
+    });
+  }
 
   const count = (id) => tracks.filter((x) => x.artist_id === id).length;
   const thumb = (x, i) => x.cover_url ? { backgroundImage: cssUrl(x.cover_url) }
@@ -931,7 +1081,11 @@ export default function Home() {
   const fadeList = [...withPhoto.filter((p) => p.is_premium), ...withPhoto.filter((p) => !p.is_premium)];
   const fIdx = fadeList.length ? fi % fadeList.length : 0;
   const curT = cur >= 0 ? tracks[cur] : null;
-  const showLogin = !user && (tab === "login" || tab === "pub" || tab === "me");
+  const showLogin = !user && ["login", "pub", "me", "messages", "chat"].includes(tab);
+  // Classement des écoutes : micro d'or (n°1), d'argent (n°2), de bronze (n°3)
+  const rankMap = {};
+  [...tracks].filter((x) => (x.plays || 0) > 0).sort((a, b) => (b.plays || 0) - (a.plays || 0)).slice(0, 3).forEach((x, i) => { rankMap[x.id] = i + 1; });
+  const unreadMsgs = user ? inbox.filter((m) => !m.is_read && m.sender_id !== user.id).length : 0;
   const rNow = rList[rInfo.i] || null;
   const rNext = rList.length ? rList[rInfo.next ?? ((rInfo.i + 1) % rList.length)] : null;
   // Pochette du titre de la radio : cover_url de radio_playlist, sinon la photo du profil de l'artiste (même nom), sinon le logo
@@ -959,16 +1113,19 @@ export default function Home() {
     const idx = tracks.indexOf(x);
     const cs = comments.filter((cm) => cm.track_id === x.id);
     const isCur = curT?.id === x.id;
+    const href = x.allow_download !== false ? dlUrl(x) : "";
     return (
       <div className="row" key={x.id}>
         <div className="rh">
           <div className="th" style={thumb(x, i)} />
-          <div className="rt"><b>{x.title}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small></div>
+          <div className="rt"><b>{x.title}{rankMap[x.id] ? <Mic r={rankMap[x.id]} /> : null}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small></div>
           <button className="pl" onClick={() => (isCur ? toggle() : load(idx))}><Icon n={isCur && playing ? "pause" : "play"} s={18} fill /></button>
         </div>
         <div className="act">
           <button className={isLiked(x.id) ? "liked" : ""} onClick={() => toggleLike(x.id)}><Icon n="heart" s={20} fill={isLiked(x.id)} />{likeCount(x.id) || ""}</button>
           <button onClick={() => setOpenC({ ...openC, [x.id]: !openC[x.id] })}><Icon n="chat" s={20} />{cs.length || ""}</button>
+          <span className="pc" title={t.plays}><Icon n="headphones" s={19} />{x.plays || 0}</span>
+          {href ? <a href={href} download rel="noopener noreferrer" title={t.dl} aria-label={t.dl}><Icon n="download" s={20} /></a> : null}
         </div>
         {openC[x.id] && (
           <div className="cbox">
@@ -1037,7 +1194,7 @@ export default function Home() {
     <div className="page">{Style}
       <audio ref={aRef}
         onPlay={() => { setPlaying(true); if (rOn) stopRadio(); setActiveSt(null); }} onPause={() => setPlaying(false)}
-        onTimeUpdate={(e) => setPr({ t: e.target.currentTime, d: e.target.duration || 0 })}
+        onTimeUpdate={(e) => { setPr({ t: e.target.currentTime, d: e.target.duration || 0 }); countPlay(e.target.currentTime, e.target.duration); }}
         onEnded={() => step(1)} />
       <audio ref={rRef} preload="auto"
         onError={() => {
@@ -1059,6 +1216,12 @@ export default function Home() {
         </nav>
         <div className="right">
           <button className="pubb" onClick={() => go("pub")}>+ {t.pub}</button>
+          {user && (
+            <button className="bellb" onClick={() => go("messages")} aria-label={t.msgs}>
+              <Icon n="chat" s={20} />
+              {unreadMsgs > 0 && <span className="bdot">{unreadMsgs > 9 ? "9+" : unreadMsgs}</span>}
+            </button>
+          )}
           {user && (
             <button className="bellb" onClick={toggleBell} aria-label={t.notif}>
               <Icon n="bell" s={20} />
@@ -1192,8 +1355,9 @@ export default function Home() {
             {tracks.slice(0, 4).map((x, i) => (
               <button className="post" key={x.id} onClick={() => load(tracks.indexOf(x))}>
                 <div className="th" style={thumb(x, i)} />
-                <span className="pt"><b>{x.title}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small><small>{ago(x.created_at, lang)}</small></span>
+                <span className="pt"><b>{x.title}{rankMap[x.id] ? <Mic r={rankMap[x.id]} s={16} /> : null}</b><small>{x.profiles?.username}<PB p={x.profiles} /></small><small>{ago(x.created_at, lang)}</small></span>
                 <span className="hc"><Icon n="heart" s={16} />{likeCount(x.id)}</span>
+                <span className="hc"><Icon n="headphones" s={16} />{x.plays || 0}</span>
               </button>
             ))}
             <button className="outl" onClick={() => go("music")}>{t.seePosts} →</button>
@@ -1246,6 +1410,7 @@ export default function Home() {
             <h2 className="st2" style={{ margin: "8px 0" }}>{p.username}<PB p={p} full /></h2>
             <p className="sub">{p.bio || t.noBio}</p>
             <p className="sub">{list.length} {t.tracksN}</p>
+            {user?.id !== p.id && <button className="outl small msgb" onClick={() => openChat(p.id)}><Icon n="chat" s={18} />{t.msgBtn}</button>}
           </div>
           {list.map((x, i) => renderRow(x, i))}
         </>);
@@ -1411,132 +1576,4 @@ export default function Home() {
         <h2 className="st2">{t.tv}</h2>
         {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
         {tvs.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:") || s.stream_url.includes("embed")
-              ? (frameSrc(s.stream_url) ? <iframe className="vid" src={frameSrc(s.stream_url)} allow="autoplay; fullscreen" allowFullScreen /> : null)
-              : <video className="vid" controls playsInline src={s.stream_url} />}
-          </div>
-        ))}
-      </>)}
-
-      {user && tab === "pub" && (
-        <div className="form">
-          <h2 className="st2">{t.pub}</h2>
-          <input placeholder={t.title} maxLength={120} value={title} onChange={(e) => setTitle(e.target.value)} />
-          <label>Audio</label>
-          <input type="file" accept="audio/*" onChange={(e) => setFile(e.target.files[0] || null)} />
-          <label>{t.cover}</label>
-          <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setCoverFile(e.target.files[0] || null)} />
-          <button className="btn" onClick={upload} disabled={busy}>{t.send}</button>
-          <p className="msg">{msg}</p>
-        </div>
-      )}
-
-      {user && tab === "me" && (
-        <div className="form">
-          <Avatar p={profile} size="big" />
-          <h2 className="st2" style={{ textAlign: "center", margin: 0 }}>{profile?.username}<PB p={profile} full /></h2>
-          <p className="sub" style={{ textAlign: "center" }}>{count(user.id)} {t.tracksN}</p>
-          <label>{t.photo}</label>
-          <input type="file" accept="image/jpeg,image/png,image/webp" onChange={(e) => setAvatarFile(e.target.files[0] || null)} />
-          <label>{t.bio}</label>
-          <textarea maxLength={500} value={bio} onChange={(e) => setBio(e.target.value)} />
-          <button className="btn" onClick={saveProfile} disabled={busy}>{t.save}</button>
-          <p className="msg">{msg}</p>
-
-          {isPrem ? (
-            <section className="panel gold" style={{ marginTop: 18 }}>
-              <h3 className="ptitle">★ {t.premSpace}</h3>
-
-              <h4 style={{ margin: "18px 0 4px" }}>{t.rTitle}</h4>
-              {tracks.filter((x) => x.artist_id === user.id).length === 0 && <p className="sub">{t.noTracks}</p>}
-              {tracks.filter((x) => x.artist_id === user.id).map((x) => {
-                const st = reqStatus(x.id);
-                return (
-                  <div className="mrow" key={x.id}>
-                    <b>{x.title}</b>
-                    {st === "pending" ? <span className="chip">{t.rPending}</span>
-                      : st === "approved" ? <span className="chip ok">{t.rOk}</span>
-                      : st === "rejected" ? <span className="chip no">{t.rNo}</span>
-                      : <button className="sbtn" onClick={() => requestRadio(x)} disabled={busy}>{t.askRadio}</button>}
-                  </div>
-                );
-              })}
-
-              <h4 style={{ margin: "22px 0 0" }}>{t.addVideo}</h4>
-              <input placeholder={t.vTitle} maxLength={120} value={vTitle} onChange={(e) => setVTitle(e.target.value)} />
-              <input placeholder={t.vLink} value={vUrl} onChange={(e) => setVUrl(e.target.value)} />
-              <button className="btn" onClick={addVideo} disabled={busy}>{t.addVideo}</button>
-              {videos.filter((v) => v.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myVideos}</h4>}
-              {videos.filter((v) => v.user_id === user.id).map((v) => (
-                <div className="mrow" key={v.youtube_id}>
-                  <b>{v.title}</b>
-                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteVideo(v)}>{t.del}</button>
-                </div>
-              ))}
-
-              <h4 style={{ margin: "22px 0 0" }}>{t.addEvent}</h4>
-              <input placeholder={t.evTitle} maxLength={120} value={evTitle} onChange={(e) => setEvTitle(e.target.value)} />
-              <input placeholder={t.evPlace} maxLength={120} value={evPlace} onChange={(e) => setEvPlace(e.target.value)} />
-              <label>{t.evDate}</label>
-              <input type="datetime-local" value={evDate} onChange={(e) => setEvDate(e.target.value)} />
-              <input placeholder={t.evLink} value={evLink} onChange={(e) => setEvLink(e.target.value)} />
-              <textarea placeholder={t.evDesc} maxLength={500} value={evDesc} onChange={(e) => setEvDesc(e.target.value)} />
-              <button className="btn" onClick={addEvent} disabled={busy}>{t.addEvent}</button>
-              {events.filter((e) => e.user_id === user.id).length > 0 && <h4 style={{ margin: "16px 0 0" }}>{t.myEvents}</h4>}
-              {events.filter((e) => e.user_id === user.id).map((e) => (
-                <div className="mrow" key={e.id}>
-                  <b>{e.title}</b>
-                  <button className="lnk" style={{ marginTop: 0 }} onClick={() => deleteEvent(e.id)}>{t.del}</button>
-                </div>
-              ))}
-              <p className="msg">{pMsg}</p>
-            </section>
-          ) : (
-            <button className="btn alt" onClick={() => go("premium")}>★ {t.premGo}</button>
-          )}
-
-          <button className="btn alt" onClick={() => setLang(null)}>{t.lang}</button>
-          <button className="btn alt" onClick={() => supabase.auth.signOut()}>{t.out}</button>
-        </div>
-      )}
-
-      {curT && !rOn && (
-        <div className="mini">
-          <div className="th" style={{ ...thumb(curT, 0), width: 44, height: 44, flex: "0 0 44px" }} />
-          <div className="mt">
-            <b>{curT.title}</b><small>{curT.profiles?.username} · {fmt(pr.t)} / {fmt(pr.d)}</small>
-            <div className="bar" onClick={seek}><i style={{ width: (pr.d ? (pr.t / pr.d) * 100 : 0) + "%" }} /></div>
-          </div>
-          <button onClick={() => step(-1)} aria-label="Prev"><Icon n="prev" s={18} fill /></button>
-          <button className="mp" onClick={toggle} aria-label="Play"><Icon n={playing ? "pause" : "play"} s={20} fill /></button>
-          <button onClick={() => step(1)} aria-label="Next"><Icon n="next" s={18} fill /></button>
-        </div>
-      )}
-
-      {rOn && rNow && tab !== "radio" && (
-        <div className="mini">
-          <div className="th" style={{ backgroundImage: rCoverImg ? cssUrl(rCoverImg) : 'url("/icon-512.png")', width: 44, height: 44, flex: "0 0 44px" }} />
-          <div className="mt">
-            <b>{rNow.title}</b><small>● {t.live} · {rNow.artist}</small>
-            <div className="bar"><i style={{ width: (rNow.duration_seconds ? (rInfo.off / rNow.duration_seconds) * 100 : 0) + "%" }} /></div>
-          </div>
-          <button onClick={() => go("radio")} aria-label="Radio"><Icon n="radio" s={18} /></button>
-          <button className="mp" onClick={stopRadio} aria-label="Stop"><Icon n="pause" s={20} fill /></button>
-        </div>
-      )}
-
-      <footer className="foot"><div className="owner">{"© 2026 "}<b>KMIKZ RAPATIZ</b>{" · " + t.owner}</div><Link href="/conditions">{"Conditions d'utilisation"}</Link>{" · "}<Link href="/confidentialite">{"Confidentialité"}</Link></footer>
-
-      <nav className="bot">
-        {bot.map(([k, n, ic]) => (
-          <button key={k} className={(tab === k ? "on " : "") + (k === "pub" ? "mid" : "")} onClick={() => go(k)}>
-            {k === "pub" ? <span><Icon n={ic} s={26} /></span> : <><Icon n={ic} />{n}</>}
-          </button>
-        ))}
-      </nav>
-    </div>
-  );
-}
+          <div className="stn" key=
