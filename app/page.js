@@ -1572,20 +1572,7 @@ export default function Home() {
         })}
       </>)}
 
-   {!showLogin && tab === "tv" && (<>
-        <h2 className="st2">{t.tv}</h2>
-        {tvs.length === 0 && <p className="sub">{t.nostat}</p>}
-        {tvs.map((s) => (
-          <div className="stn" key={s.id}>
-            <div className="liveb"><i />{t.live}</div>
-            <strong>{s.name}</strong>
-            {s.stream_url.startsWith("iframe:") || s.stream_url.includes("embed")
-              ? (frameSrc(s.stream_url) ? <iframe className="vid" src={frameSrc(s.stream_url)} allow="autoplay; fullscreen" allowFullScreen /> : null)
-              : <video className="vid" controls playsInline src={s.stream_url} />}
-          </div>
-        ))}
-      </>)}
-
+{!showLogin && tab === "tv" && <RaplikeTV supabase={supabase} tvs={tvs} t={t} lang={lang} frameSrc={frameSrc} />}
       {user && tab === "messages" && (<>
         <h2 className="st2">{t.msgs}</h2>
         {convs.length === 0 && <p className="sub">{t.noConv}</p>}
