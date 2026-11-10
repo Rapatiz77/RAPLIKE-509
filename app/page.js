@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 
+{!showLogin && tab === "tv" && <RaplikeTV supabase={supabase} tvs={tvs} t={t} lang={lang} frameSrc={frameSrc} />}
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
